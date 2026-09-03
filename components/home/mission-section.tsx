@@ -9,11 +9,11 @@ export function MissionSection() {
         <Reveal>
           <div className="overflow-hidden rounded-xl border border-border shadow-sm">
             <Image
-              src="/mission-engineers.png"
-              alt="NXTwave engineers reviewing a VLSI chip layout on a large technical display"
+              src="/about-image.png"
+              alt="NXTwave semiconductor engineering team collaborating on a technical design"
               width={720}
               height={560}
-              className="h-full w-full object-cover"
+              className="h-auto w-full"
               priority={false}
             />
           </div>
@@ -24,7 +24,7 @@ export function MissionSection() {
           <h2 className="mt-4 text-balance font-serif text-3xl font-semibold leading-tight text-navy sm:text-4xl">
             Engineered for First-Pass Success
           </h2>
-          <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
+          <div className="body-copy mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-muted-foreground">
             <p>
               NXTwave Semiconductor is a premier VLSI design firm headquartered
               in Bengaluru. We provide comprehensive, end-to-end semiconductor

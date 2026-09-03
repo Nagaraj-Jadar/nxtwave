@@ -6,11 +6,13 @@ import { cn } from '@/lib/utils'
 export function Reveal({
   children,
   className,
+  id,
   delay = 0,
   as: Tag = 'div',
 }: {
   children: React.ReactNode
   className?: string
+  id?: string
   delay?: number
   as?: React.ElementType
 }) {
@@ -43,6 +45,7 @@ export function Reveal({
   return (
     <Tag
       ref={ref}
+      id={id}
       style={{ transitionDelay: `${delay}ms` }}
       className={cn(
         'transition-all duration-700 ease-out motion-reduce:transition-none',

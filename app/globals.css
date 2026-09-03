@@ -53,6 +53,7 @@
 
 :root {
   color-scheme: light;
+  scroll-behavior: smooth;
   --background: #ffffff;
   --foreground: #141821;
   --card: #ffffff;
@@ -175,6 +176,17 @@
   h2,
   h3 {
     @apply font-serif;
+  }
+}
+
+.body-copy {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+@media (max-width: 639px) {
+  .body-copy {
+    text-align: left;
   }
 }
 

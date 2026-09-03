@@ -30,7 +30,7 @@ export function CoreStrengths() {
               <h3 className="mt-5 font-serif text-lg font-semibold text-navy">
                 {s.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              <p className="body-copy mt-3 text-sm leading-relaxed text-muted-foreground">
                 {s.description}
               </p>
             </Reveal>

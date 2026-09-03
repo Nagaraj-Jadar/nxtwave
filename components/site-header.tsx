@@ -2,13 +2,15 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { Menu, X, ArrowRight } from 'lucide-react'
+import { ChevronDown, ChevronRight, Menu, X, ArrowRight } from 'lucide-react'
 import { Logo } from '@/components/logo'
 import { navLinks } from '@/lib/site'
 import { cn } from '@/lib/utils'
+import { capabilities } from '@/data/content'
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
+  const [capabilitiesOpen, setCapabilitiesOpen] = useState(false)
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -38,15 +40,46 @@ export function SiteHeader() {
             aria-label="Primary"
             className="hidden items-center gap-8 lg:flex"
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-foreground/80 transition-colors hover:text-navy"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.label === 'Capabilities' ? (
+                <div key={link.href} className="group relative py-8">
+                  <Link
+                    href={link.href}
+                    className="flex items-center gap-1 text-sm font-medium text-foreground/80 transition-colors group-hover:text-navy group-focus-within:text-navy"
+                  >
+                    {link.label}
+                    <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" aria-hidden="true" />
+                    <span className="absolute inset-x-0 bottom-[22px] h-0.5 origin-left scale-x-0 bg-brand-blue transition-transform group-hover:scale-x-100 group-focus-within:scale-x-100" />
+                  </Link>
+                  <div className="pointer-events-none absolute left-1/2 top-full z-50 w-[min(46rem,calc(100vw-2rem))] -translate-x-1/2 -translate-y-2 border border-border bg-background p-5 opacity-0 shadow-xl transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Capabilities</p>
+                    <div className="grid grid-cols-2 gap-x-3 gap-y-1">
+                      {capabilities.map((capability) => (
+                        <Link
+                          key={capability.number}
+                          href={`/capabilities#${capability.id}`}
+                          className="group/card flex min-w-0 items-center gap-3 border-l-2 border-transparent px-3 py-3 transition-colors hover:border-brand-blue hover:bg-secondary/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                        >
+                          <span className="text-xs font-semibold text-brand-blue">{capability.number}</span>
+                          <span className="min-w-0 flex-1 font-sans text-sm font-medium leading-snug text-navy transition-colors group-hover/card:font-semibold">{capability.title}</span>
+                          <ChevronRight className="h-4 w-4 flex-none text-brand-blue transition-transform group-hover/card:translate-x-1" aria-hidden="true" />
+                        </Link>
+                      ))}
+                    </div>
+                    <div className="mt-4 flex justify-end border-t border-border pt-4">
+                      <Link href="/capabilities" className="inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-brand-blue">
+                        View All Capabilities
+                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link key={link.href} href={link.href} className="text-sm font-medium text-foreground/80 transition-colors hover:text-navy">
+                  {link.label}
+                </Link>
+              ),
+            )}
           </nav>
 
           <button
@@ -97,18 +130,48 @@ export function SiteHeader() {
               <X className="h-5 w-5" aria-hidden="true" />
             </button>
           </div>
-          <nav aria-label="Site" className="flex flex-col gap-1 p-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="group flex items-center justify-between rounded-lg px-4 py-4 text-lg font-medium text-navy transition-colors hover:bg-secondary"
-              >
-                {link.label}
-                <ArrowRight className="h-5 w-5 text-brand-blue opacity-0 transition-opacity group-hover:opacity-100" />
-              </Link>
-            ))}
+          <nav aria-label="Site" className="flex flex-1 flex-col gap-1 overflow-y-auto p-6">
+            {navLinks.map((link) =>
+              link.label === 'Capabilities' ? (
+                <div key={link.href} className="rounded-lg">
+                  <button
+                    type="button"
+                    onClick={() => setCapabilitiesOpen((isOpen) => !isOpen)}
+                    aria-expanded={capabilitiesOpen}
+                    aria-controls="mobile-capabilities"
+                    className="flex w-full items-center justify-between rounded-lg px-4 py-4 text-left text-lg font-medium text-navy transition-colors hover:bg-secondary"
+                  >
+                    Capabilities
+                    <ChevronDown className={cn('h-5 w-5 text-brand-blue transition-transform', capabilitiesOpen && 'rotate-180')} aria-hidden="true" />
+                  </button>
+                  <div id="mobile-capabilities" className={cn('grid transition-[grid-template-rows] duration-200', capabilitiesOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]')}>
+                    <div className="min-h-0 overflow-hidden">
+                      <div className="space-y-3 px-4 pb-3">
+                        {capabilities.map((capability) => (
+                          <Link
+                            key={capability.number}
+                            href={`/capabilities#${capability.id}`}
+                            onClick={() => setOpen(false)}
+                            className="flex items-start gap-3 border-l-2 border-brand-blue/30 py-2 pl-3 text-sm text-navy transition-colors hover:border-brand-blue hover:text-brand-blue"
+                          >
+                            <span className="text-xs font-semibold text-brand-blue">{capability.number}</span>
+                            <span className="font-semibold leading-snug">{capability.title}</span>
+                          </Link>
+                        ))}
+                        <Link href="/capabilities" onClick={() => setOpen(false)} className="inline-flex items-center gap-2 pt-2 text-sm font-semibold text-brand-blue">
+                          View All Capabilities <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="group flex items-center justify-between rounded-lg px-4 py-4 text-lg font-medium text-navy transition-colors hover:bg-secondary">
+                  {link.label}
+                  <ArrowRight className="h-5 w-5 text-brand-blue opacity-0 transition-opacity group-hover:opacity-100" />
+                </Link>
+              ),
+            )}
           </nav>
           <div className="mt-auto border-t border-border p-6">
             <Link

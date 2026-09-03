@@ -57,6 +57,8 @@ export const strengths: Strength[] = [
 export type Capability = {
   number: string
   title: string
+  id: string
+  description: string
   points: string[]
   icon: LucideIcon
 }
@@ -65,6 +67,8 @@ export const capabilities: Capability[] = [
   {
     number: '01',
     title: 'Silicon Architecture & Digital Front-End',
+    id: 'silicon-architecture',
+    description: 'Architecture, RTL, and integration expertise for complex, high-performance silicon systems.',
     icon: CircuitBoard,
     points: [
       'RTL Microarchitecture Development (SystemVerilog, VHDL, Chisel)',
@@ -76,6 +80,8 @@ export const capabilities: Capability[] = [
   {
     number: '02',
     title: 'Functional Verification & Emulation',
+    id: 'functional-verification',
+    description: 'Verification strategies that establish confidence from early design intent through hardware validation.',
     icon: ShieldCheck,
     points: [
       'Advanced UVM/SystemVerilog Testbench Architecture & Assertion-Based Verification',
@@ -87,6 +93,8 @@ export const capabilities: Capability[] = [
   {
     number: '03',
     title: 'Physical Implementation & Sign-off',
+    id: 'physical-implementation',
+    description: 'Implementation and sign-off discipline for predictable performance, power, area, and manufacturability.',
     icon: LayoutGrid,
     points: [
       'Sub-5nm Hierarchical & Flat Floorplanning, Placement & Route (Innovus / ICC2)',
@@ -98,6 +106,8 @@ export const capabilities: Capability[] = [
   {
     number: '04',
     title: 'Analog & Mixed-Signal (AMS)',
+    id: 'analog-mixed-signal',
+    description: 'Precision analog, mixed-signal, RF, and custom-layout engineering for demanding interfaces.',
     icon: Waves,
     points: [
       'High-Speed Data Converters (ADC/DAC) & Power Management ICs (PMIC)',
@@ -109,6 +119,8 @@ export const capabilities: Capability[] = [
   {
     number: '05',
     title: 'Silicon Prototyping & System Board',
+    id: 'silicon-prototyping',
+    description: 'System-level prototyping and board expertise that speeds integration and pre-silicon readiness.',
     icon: SquareStack,
     points: [
       'High-Density Multilayer PCB Design & High-Speed Signal Integrity (SI/PI) Analysis',
@@ -120,6 +132,8 @@ export const capabilities: Capability[] = [
   {
     number: '06',
     title: 'Post-Silicon Validation & Production',
+    id: 'post-silicon-validation',
+    description: 'Bring-up, characterization, and production support that carries silicon confidently into volume.',
     icon: Microscope,
     points: [
       'Silicon Bring-up, Characterization & Voltage/Temperature Stress Testing',

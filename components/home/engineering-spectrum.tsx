@@ -21,8 +21,9 @@ export function EngineeringSpectrum() {
           {capabilities.map((cap, i) => (
             <Reveal
               key={cap.number}
+              id={cap.id}
               delay={(i % 3) * 80}
-              className="flex h-full flex-col rounded-xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-blue/40 hover:shadow-md"
+              className="scroll-mt-28 flex h-full flex-col rounded-xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-blue/40 hover:shadow-md"
             >
               <div className="flex items-start justify-between gap-4">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-secondary text-navy">
@@ -35,6 +36,9 @@ export function EngineeringSpectrum() {
               <h3 className="mt-5 font-serif text-lg font-semibold leading-snug text-navy">
                 {cap.title}
               </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {cap.description}
+              </p>
               <ul className="mt-4 space-y-2.5">
                 {cap.points.map((point) => (
                   <li key={point} className="flex gap-2.5 text-sm leading-relaxed text-muted-foreground">

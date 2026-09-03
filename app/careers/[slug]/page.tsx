@@ -36,7 +36,7 @@ export default async function RolePage({ params }: RolePageProps) {
         <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.8fr)] lg:px-8 lg:py-24">
           <article className="min-w-0">
             <h2 className="text-3xl text-navy">The role</h2>
-            <p className="mt-5 leading-relaxed text-muted-foreground">{job.overview}</p>
+            <p className="body-copy mt-5 max-w-3xl leading-relaxed text-muted-foreground">{job.overview}</p>
             <h2 className="mt-10 text-2xl text-navy">What you&apos;ll do</h2>
             <ul className="mt-5 space-y-3 text-muted-foreground">
               {job.responsibilities.map((item) => <li key={item} className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brand-blue" />{item}</li>)}
