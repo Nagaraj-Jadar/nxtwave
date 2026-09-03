@@ -26,41 +26,45 @@ export function SiteHeader() {
   }, [open])
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Link href="/" aria-label="NXTwave Semiconductor home" className="flex-none">
-          <Logo className="w-28 sm:w-32" />
-        </Link>
+    <>
+      <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+        <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-[88px] lg:px-8">
+          <Link href="/" aria-label="NXTwave Semiconductor home" className="flex-none">
+            <Logo className="h-12 w-auto sm:h-14 lg:h-[68px]" />
+          </Link>
 
-        {/* Desktop navigation */}
-        <nav
-          aria-label="Primary"
-          className="hidden items-center gap-8 lg:flex"
-        >
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-navy"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+          {/* Desktop navigation */}
+          <nav
+            aria-label="Primary"
+            className="hidden items-center gap-8 lg:flex"
+          >
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-foreground/80 transition-colors hover:text-navy"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          aria-label="Open menu"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border text-navy transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        >
-          <Menu className="h-5 w-5" aria-hidden="true" />
-        </button>
-      </div>
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label="Open menu"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border text-navy transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <Menu className="h-5 w-5" aria-hidden="true" />
+          </button>
+        </div>
+      </header>
 
-      {/* Overlay menu */}
+      {/* Overlay menu — rendered outside <header> so its `fixed` positioning is
+          not scoped to the header (backdrop-blur on header creates a containing
+          block for fixed descendants, which previously squashed this panel). */}
       <div
         className={cn(
           'fixed inset-0 z-50 overflow-hidden transition-opacity duration-200',
@@ -82,8 +86,8 @@ export function SiteHeader() {
             open ? 'translate-x-0' : 'translate-x-full',
           )}
         >
-          <div className="flex h-[72px] items-center justify-between border-b border-border px-6">
-            <Logo className="w-28" />
+          <div className="flex h-[68px] items-center justify-between border-b border-border px-6">
+            <Logo className="h-12 w-auto" />
             <button
               type="button"
               onClick={() => setOpen(false)}
@@ -118,6 +122,6 @@ export function SiteHeader() {
           </div>
         </div>
       </div>
-    </header>
+    </>
   )
 }

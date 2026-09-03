@@ -32,5 +32,4 @@ export const footerVerticals = [
   'IoT Solutions',
   '5G/RF Systems',
   'Industrial Edge',
-  'Medical & Biotech',
 ]

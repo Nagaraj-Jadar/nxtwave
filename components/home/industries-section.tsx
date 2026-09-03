@@ -11,20 +11,20 @@ export function IndustriesSection() {
           </h2>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mx-auto mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
           {industries.map((ind, i) => (
             <Reveal
               key={ind.number}
-              delay={(i % 6) * 60}
+              delay={(i % 5) * 60}
               className="flex flex-col items-center text-center"
             >
               <span className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-white/5 text-brand-blue">
                 <ind.icon className="h-6 w-6" aria-hidden="true" />
               </span>
-              <h3 className="mt-4 font-serif text-base font-semibold text-white">
+              <h3 className="mt-4 text-balance font-serif text-lg font-semibold leading-snug text-white">
                 {ind.title}
               </h3>
-              <p className="mt-1.5 text-xs leading-relaxed text-white/60">
+              <p className="mt-1.5 text-pretty text-sm leading-relaxed text-white/60">
                 {ind.description}
               </p>
             </Reveal>

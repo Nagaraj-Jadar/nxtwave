@@ -13,7 +13,6 @@ import {
   RadioTower,
   Wifi,
   Factory,
-  HeartPulse,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -168,12 +167,6 @@ export const industries: Industry[] = [
     title: 'Industrial Edge',
     description: 'Edge Computing, Control, Automation',
     icon: Factory,
-  },
-  {
-    number: '06',
-    title: 'Medical & Biotech',
-    description: 'Precision Systems, Embedded Electronics',
-    icon: HeartPulse,
   },
 ]
 
