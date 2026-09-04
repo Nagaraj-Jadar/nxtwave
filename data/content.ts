@@ -8,11 +8,6 @@ import {
   LayoutGrid,
   Waves,
   Microscope,
-  Car,
-  BrainCircuit,
-  RadioTower,
-  Wifi,
-  Factory,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -28,34 +23,33 @@ export const strengths: Strength[] = [
     number: '01',
     title: 'Deep VLSI Expertise',
     description:
-      'Our team brings decades of combined experience across RTL design, Functional verification, DFT and Physical Design & Verification. This depth of expertise ensures your silicon architecture is built on a solid foundation from day one, reducing costly redesigns and accelerating design closure.',
+      'Decades of expertise across RTL design, verification, DFT, and physical design—delivering robust silicon solutions from architecture to sign-off.',
     icon: Cpu,
   },
   {
     number: '02',
     title: 'Quality-First Approach',
     description:
-      'Quality is embedded into every stage of our design flow. Through rigorous testing, validation, and sign-off checks at each milestone, we minimize risk and maximize first-pass silicon success and yield.',
+      'Rigorous verification and milestone-driven quality checks reduce design risk and help deliver reliable first-pass silicon.',
     icon: ShieldCheck,
   },
   {
     number: '03',
     title: 'Flexible Engagement Models',
     description:
-      'We understand that every project has different needs. Whether you require full turnkey project development or a focused technical partnership for a specific design phase, we tailor our engagement model to fit your goals, timeline, and budget.',
+      'From complete project execution to specialized engineering support, we tailor our engagement to your goals, timeline, and requirements.',
     icon: Users,
   },
   {
     number: '04',
     title: 'Faster Time-to-Market',
     description:
-      'By leveraging industry-leading EDA tools and optimized, proven workflows, we help you accelerate your silicon development cycle — without ever compromising on technical excellence or reliability.',
+      'Proven workflows and industry-leading EDA tools accelerate development while maintaining engineering quality and reliability.',
     icon: Gauge,
   },
 ]
 
 export type Capability = {
-  number: string
   title: string
   id: string
   description: string
@@ -65,7 +59,6 @@ export type Capability = {
 
 export const capabilities: Capability[] = [
   {
-    number: '01',
     title: 'Silicon Architecture & Digital Front-End',
     id: 'silicon-architecture',
     description: 'Architecture, RTL, and integration expertise for complex, high-performance silicon systems.',
@@ -81,7 +74,7 @@ export const capabilities: Capability[] = [
     number: '02',
     title: 'Functional Verification & Emulation',
     id: 'functional-verification',
-    description: 'Verification strategies that establish confidence from early design intent through hardware validation.',
+    description: 'Verification expertise that builds confidence from design intent through hardware validation.',
     icon: ShieldCheck,
     points: [
       'Advanced UVM/SystemVerilog Testbench Architecture & Assertion-Based Verification',
@@ -91,10 +84,9 @@ export const capabilities: Capability[] = [
     ],
   },
   {
-    number: '03',
     title: 'Physical Implementation & Sign-off',
     id: 'physical-implementation',
-    description: 'Implementation and sign-off discipline for predictable performance, power, area, and manufacturability.',
+    description: 'Implementation and sign-off expertise for predictable performance, power, area, and manufacturability.',
     icon: LayoutGrid,
     points: [
       'Sub-5nm Hierarchical & Flat Floorplanning, Placement & Route (Innovus / ICC2)',
@@ -104,7 +96,6 @@ export const capabilities: Capability[] = [
     ],
   },
   {
-    number: '04',
     title: 'Analog & Mixed-Signal (AMS)',
     id: 'analog-mixed-signal',
     description: 'Precision analog, mixed-signal, RF, and custom-layout engineering for demanding interfaces.',
@@ -117,7 +108,6 @@ export const capabilities: Capability[] = [
     ],
   },
   {
-    number: '05',
     title: 'Silicon Prototyping & System Board',
     id: 'silicon-prototyping',
     description: 'System-level prototyping and board expertise that speeds integration and pre-silicon readiness.',
@@ -130,7 +120,6 @@ export const capabilities: Capability[] = [
     ],
   },
   {
-    number: '06',
     title: 'Post-Silicon Validation & Production',
     id: 'post-silicon-validation',
     description: 'Bring-up, characterization, and production support that carries silicon confidently into volume.',
@@ -143,52 +132,6 @@ export const capabilities: Capability[] = [
     ],
   },
 ]
-
-export type Industry = {
-  number: string
-  title: string
-  description: string
-  icon: LucideIcon
-}
-
-export const industries: Industry[] = [
-  {
-    number: '01',
-    title: 'Automotive ICs',
-    description: 'Compute, Safety, High-Integrity Systems',
-    icon: Car,
-  },
-  {
-    number: '02',
-    title: 'AI / ML Accelerators',
-    description: 'High-Performance Compute, NPU, GPU',
-    icon: BrainCircuit,
-  },
-  {
-    number: '03',
-    title: '5G / RF Systems',
-    description: 'RFIC, mmWave, Connectivity',
-    icon: RadioTower,
-  },
-  {
-    number: '04',
-    title: 'IoT Solutions',
-    description: 'Low-Power, Secure, Connected Devices',
-    icon: Wifi,
-  },
-  {
-    number: '05',
-    title: 'Industrial Edge',
-    description: 'Edge Computing, Control, Automation',
-    icon: Factory,
-  },
-]
-
-export type ProcessStep = {
-  number: string
-  title: string
-  description: string
-}
 
 export const processSteps: ProcessStep[] = [
   {

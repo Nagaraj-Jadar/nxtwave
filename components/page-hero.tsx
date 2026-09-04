@@ -47,7 +47,7 @@ export function PageHero({
           {title}
         </h1>
         {description && (
-          <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-navy-foreground/75">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-navy-foreground/75">
             {description}
           </p>
         )}

@@ -4,13 +4,11 @@ import { Logo } from '@/components/logo'
 import {
   siteConfig,
   footerServices,
-  footerVerticals,
 } from '@/lib/site'
 import { NewsletterForm } from '@/components/newsletter-form'
 
 const companyLinks = [
   { label: 'About', href: '/about' },
-  { label: 'Industries', href: '/industries' },
   { label: 'Careers', href: '/careers' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -19,7 +17,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-6">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Logo className="w-36" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
@@ -50,19 +48,6 @@ export function SiteFooter() {
               <li key={s}>
                 <Link
                   href="/capabilities"
-                  className="text-sm text-muted-foreground transition-colors hover:text-navy"
-                >
-                  {s}
-                </Link>
-              </li>
-            ))}
-          </FooterColumn>
-
-          <FooterColumn title="Industries">
-            {footerVerticals.map((s) => (
-              <li key={s}>
-                <Link
-                  href="/industries"
                   className="text-sm text-muted-foreground transition-colors hover:text-navy"
                 >
                   {s}

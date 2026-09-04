@@ -27,10 +27,10 @@ export function CoreStrengths() {
                   {s.number}
                 </span>
               </div>
-              <h3 className="mt-5 font-serif text-lg font-semibold text-navy">
+              <h3 className="mt-5 min-h-14 font-serif text-xl font-semibold leading-snug text-navy">
                 {s.title}
               </h3>
-              <p className="body-copy mt-3 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-4 text-[15px] leading-6 text-muted-foreground">
                 {s.description}
               </p>
             </Reveal>

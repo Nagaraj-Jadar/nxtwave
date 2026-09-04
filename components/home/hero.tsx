@@ -26,7 +26,7 @@ export function Hero() {
             <span className="block">SILICON MINDS</span>
             <span className="block text-brand-blue">EVERYWHERE.</span>
           </h1>
-          <p className="mt-5 max-w-md text-pretty text-base leading-relaxed text-muted-foreground">
+          <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
             End-to-end semiconductor design expertise from architecture to GDSII
             and post-silicon validation. Engineered for first-pass success.
           </p>
@@ -35,7 +35,7 @@ export function Hero() {
               href="/capabilities"
               className="inline-flex items-center justify-center gap-2 rounded-md bg-navy px-6 py-3 text-sm font-semibold text-navy-foreground transition-colors hover:bg-navy-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
-              Explore Our Capabilities
+              Explore Our Services
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
             <Link

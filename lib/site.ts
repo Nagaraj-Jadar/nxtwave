@@ -11,8 +11,7 @@ export const siteConfig = {
 
 export const navLinks = [
   { label: 'About', href: '/about' },
-  { label: 'Capabilities', href: '/capabilities' },
-  { label: 'Industries', href: '/industries' },
+  { label: 'Services', href: '/capabilities' },
   { label: 'Careers', href: '/careers' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -26,10 +25,3 @@ export const footerServices = [
   'Post-Silicon Validation',
 ]
 
-export const footerVerticals = [
-  'Automotive ICs',
-  'AI/ML Accelerators',
-  'IoT Solutions',
-  '5G/RF Systems',
-  'Industrial Edge',
-]

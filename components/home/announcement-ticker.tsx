@@ -1,7 +1,4 @@
 const items = [
-  'Industry Announcements',
-  'Achieved First-Pass Silicon Success on 3nm Node',
-  'Expanding Global Embedded Engineering Centers',
   'Precision Engineering',
   'Turnkey Execution',
   'Global Delivery Standards',
@@ -12,8 +9,8 @@ export function AnnouncementTicker() {
   const loop = [...items, ...items]
 
   return (
-    <div className="w-full overflow-hidden bg-navy py-3 text-navy-foreground">
-      <div className="flex w-max animate-marquee whitespace-nowrap will-change-transform">
+    <div className="flex min-h-12 w-full items-center overflow-hidden bg-navy text-navy-foreground">
+      <div className="flex w-max items-center whitespace-nowrap py-3 will-change-transform animate-marquee">
         {loop.map((item, i) => (
           <span key={i} className="flex items-center">
             <span className="px-4 text-xs font-medium uppercase tracking-wider text-white/90 sm:text-sm">

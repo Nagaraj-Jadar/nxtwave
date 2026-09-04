@@ -7,11 +7,11 @@ export function EngineeringSpectrum() {
     <section id="capabilities" className="bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <SectionLabel align="center">Our Core Capabilities</SectionLabel>
+          <SectionLabel align="center">Our Core Services</SectionLabel>
           <h2 className="mt-4 text-balance font-serif text-3xl font-semibold text-navy sm:text-4xl">
             The Complete Silicon Engineering Spectrum
           </h2>
-          <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
             Accelerating time-to-market by integrating seamless RTL-to-GDSII
             workflows with rigorous technical precision.
           </p>
@@ -20,7 +20,7 @@ export function EngineeringSpectrum() {
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((cap, i) => (
             <Reveal
-              key={cap.number}
+              key={cap.id}
               id={cap.id}
               delay={(i % 3) * 80}
               className="scroll-mt-28 flex h-full flex-col rounded-xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-blue/40 hover:shadow-md"
@@ -28,9 +28,6 @@ export function EngineeringSpectrum() {
               <div className="flex items-start justify-between gap-4">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-secondary text-navy">
                   <cap.icon className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <span className="font-sans text-sm font-semibold text-brand-blue">
-                  {cap.number}
                 </span>
               </div>
               <h3 className="mt-5 font-serif text-lg font-semibold leading-snug text-navy">
