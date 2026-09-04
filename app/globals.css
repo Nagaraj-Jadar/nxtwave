@@ -172,6 +172,14 @@
     @apply bg-background text-foreground font-sans;
     overflow-x: hidden;
   }
+  p {
+    text-align: left;
+    text-wrap: pretty;
+  }
+  .mission-copy p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
   h1,
   h2,
   h3 {

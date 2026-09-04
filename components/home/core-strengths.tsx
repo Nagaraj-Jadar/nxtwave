@@ -15,16 +15,13 @@ export function CoreStrengths() {
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {strengths.map((s, i) => (
             <Reveal
-              key={s.number}
+              key={s.title}
               delay={i * 80}
               className="flex h-full flex-col rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md"
             >
               <div className="flex items-center justify-between">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-navy text-navy-foreground">
                   <s.icon className="h-6 w-6" aria-hidden="true" />
-                </span>
-                <span className="font-sans text-sm font-semibold text-brand-blue">
-                  {s.number}
                 </span>
               </div>
               <h3 className="mt-5 min-h-14 font-serif text-xl font-semibold leading-snug text-navy">

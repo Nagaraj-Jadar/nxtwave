@@ -24,7 +24,7 @@ export function MissionSection() {
           <h2 className="mt-4 text-balance font-serif text-3xl font-semibold leading-tight text-navy sm:text-4xl">
             Engineered for First-Pass Success
           </h2>
-          <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-muted-foreground">
+          <div className="mission-copy mt-6 max-w-xl space-y-4 text-base leading-7 text-muted-foreground">
             <p>
               NXTwave Semiconductor is a premier VLSI design firm headquartered
               in Bengaluru. We provide comprehensive, end-to-end semiconductor

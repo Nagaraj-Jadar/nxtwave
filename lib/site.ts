@@ -5,7 +5,7 @@ export const siteConfig = {
     'End-to-end semiconductor design expertise from architecture to GDSII and post-silicon validation. Engineered for first-pass success.',
   contact: {
     address: 'Bengaluru, Karnataka, India',
-    email: 'info@nxtwavesemi.com',
+    email: 'operations@nxtwavesemi.com',
   },
 }
 

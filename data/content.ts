@@ -12,7 +12,6 @@ import {
 } from 'lucide-react'
 
 export type Strength = {
-  number: string
   title: string
   description: string
   icon: LucideIcon
@@ -20,28 +19,24 @@ export type Strength = {
 
 export const strengths: Strength[] = [
   {
-    number: '01',
     title: 'Deep VLSI Expertise',
     description:
       'Decades of expertise across RTL design, verification, DFT, and physical design—delivering robust silicon solutions from architecture to sign-off.',
     icon: Cpu,
   },
   {
-    number: '02',
     title: 'Quality-First Approach',
     description:
       'Rigorous verification and milestone-driven quality checks reduce design risk and help deliver reliable first-pass silicon.',
     icon: ShieldCheck,
   },
   {
-    number: '03',
     title: 'Flexible Engagement Models',
     description:
       'From complete project execution to specialized engineering support, we tailor our engagement to your goals, timeline, and requirements.',
     icon: Users,
   },
   {
-    number: '04',
     title: 'Faster Time-to-Market',
     description:
       'Proven workflows and industry-leading EDA tools accelerate development while maintaining engineering quality and reliability.',
