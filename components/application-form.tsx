@@ -100,14 +100,13 @@ export function ApplicationForm({ jobTitle, jobSlug }: { jobTitle: string; jobSl
 
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Full name" htmlFor="name" required error={errors.name}>
-          <TextInput id="name" name="name" placeholder="Priya Sharma" aria-invalid={!!errors.name} />
+          <TextInput id="name" name="name" aria-invalid={!!errors.name} />
         </Field>
         <Field label="Email" htmlFor="email" required error={errors.email}>
           <TextInput
             id="email"
             name="email"
             type="email"
-            placeholder="you@example.com"
             aria-invalid={!!errors.email}
           />
         </Field>
@@ -115,13 +114,12 @@ export function ApplicationForm({ jobTitle, jobSlug }: { jobTitle: string; jobSl
 
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Phone" htmlFor="phone" required error={errors.phone}>
-          <TextInput id="phone" name="phone" placeholder="Your phone number" aria-invalid={!!errors.phone} />
+          <TextInput id="phone" name="phone" aria-invalid={!!errors.phone} />
         </Field>
         <Field label="Years of experience" htmlFor="experience" required error={errors.experience}>
           <TextInput
             id="experience"
             name="experience"
-            placeholder="e.g. 5"
             inputMode="numeric"
             aria-invalid={!!errors.experience}
           />
@@ -133,21 +131,23 @@ export function ApplicationForm({ jobTitle, jobSlug }: { jobTitle: string; jobSl
           <TextInput
             id="linkedin"
             name="linkedin"
-            placeholder="linkedin.com/in/…"
             aria-invalid={!!errors.linkedin}
           />
         </Field>
         <Field label="Portfolio / GitHub" htmlFor="portfolio">
-          <TextInput id="portfolio" name="portfolio" placeholder="github.com/…" />
+          <TextInput id="portfolio" name="portfolio" />
         </Field>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Current location" htmlFor="location">
-          <TextInput id="location" name="location" placeholder="Bengaluru, India" />
+          <TextInput id="location" name="location" />
         </Field>
         <Field label="Notice period" htmlFor="notice">
-          <SelectInput id="notice" name="notice" defaultValue="30 days">
+          <SelectInput id="notice" name="notice" defaultValue="">
+            <option value="" disabled>
+              Select notice period
+            </option>
             {noticeOptions.map((opt) => (
               <option key={opt} value={opt}>
                 {opt}
@@ -174,7 +174,6 @@ export function ApplicationForm({ jobTitle, jobSlug }: { jobTitle: string; jobSl
         <TextArea
           id="message"
           name="message"
-          placeholder="Tell us about the silicon problems you love solving…"
         />
       </Field>
 
