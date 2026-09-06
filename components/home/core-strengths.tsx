@@ -46,7 +46,7 @@ export function CoreStrengths() {
                 <strength.icon className="h-5 w-5" aria-hidden="true" />
               </div>
               <h3 className="mt-5 max-w-full">
-                <span className="inline-flex min-h-8 max-w-full items-center rounded-full border border-brand-blue px-4 py-1.5 font-serif text-[1.12rem] font-semibold leading-tight text-white shadow-[inset_0_0_12px_rgba(61,79,214,0.16)] sm:whitespace-nowrap sm:text-[0.98rem] lg:text-[1.02rem] xl:text-[1.08rem]" style={{ background: 'linear-gradient(90deg, #3d4fd6 0%, #3d4fd6 42%, rgba(61, 79, 214, 0.78) 64%, rgba(61, 79, 214, 0.36) 82%, rgba(61, 79, 214, 0.06) 100%)' }}>
+                <span className="inline-flex min-h-8 max-w-full items-center rounded-full border border-brand-blue bg-brand-blue px-4 py-1.5 font-serif text-[1.12rem] font-semibold leading-tight text-white shadow-[inset_0_0_12px_rgba(61,79,214,0.16)] sm:whitespace-nowrap sm:text-[0.98rem] lg:text-[1.02rem] xl:text-[1.08rem]">
                   {strength.title}
                 </span>
               </h3>

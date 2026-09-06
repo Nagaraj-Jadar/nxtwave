@@ -6,11 +6,13 @@ export function PageHero({
   title,
   description,
   breadcrumb,
+  eyebrowClassName,
 }: {
   eyebrow: string
   title: string
   description?: string
   breadcrumb?: { label: string; href?: string }[]
+  eyebrowClassName?: string
 }) {
   return (
     <section className="relative overflow-hidden bg-navy text-navy-foreground">
@@ -42,7 +44,7 @@ export function PageHero({
             </ol>
           </nav>
         )}
-        <SectionLabel tone="light">{eyebrow}</SectionLabel>
+        <SectionLabel tone="light" className={eyebrowClassName}>{eyebrow}</SectionLabel>
         <h1 className="mt-4 max-w-3xl text-balance text-4xl leading-tight tracking-tight md:text-5xl">
           {title}
         </h1>
