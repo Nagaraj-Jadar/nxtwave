@@ -54,6 +54,42 @@ export default function CareersPage() {
     <>
       <SiteHeader />
       <main className="bg-[#F5F7FB]">
+        {/* Compact careers hero */}
+        <section className="relative isolate overflow-hidden bg-navy text-navy-foreground">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:42px_42px]" aria-hidden="true" />
+          <CircuitPattern tone="dark" className="absolute inset-0 h-full w-full opacity-55" />
+          <div className="relative mx-auto flex min-h-[300px] max-w-[1280px] items-center justify-between gap-10 px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
+            <div className="max-w-3xl">
+              <nav aria-label="Breadcrumb" className="mb-3 hidden text-sm text-navy-foreground/55 sm:block">
+                <Link href="/" className="transition-colors hover:text-white">Home</Link>
+                <span className="px-2">/</span>
+                <span className="text-white">Careers</span>
+              </nav>
+              <SectionLabel tone="light">Careers at NXTwave</SectionLabel>
+              <h1 className="mt-3 text-balance text-3xl leading-tight tracking-tight sm:text-5xl">
+                Build the future of silicon.
+              </h1>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-navy-foreground/75 sm:text-lg">
+                Join a team of engineers driving high-impact semiconductor innovations that connect the world to chips. We hire for depth, curiosity, and craftsmanship.
+              </p>
+              <div className="mt-3 flex flex-col gap-2 sm:mt-4 sm:flex-row sm:gap-3">
+                <Link href="#open-positions" className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-blue px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+                  View open positions <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+                  Send your profile <MoveUpRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+            <div className="relative hidden h-40 w-40 flex-none items-center justify-center border border-brand-blue/50 lg:flex" aria-hidden="true">
+              <div className="absolute inset-5 border border-white/15" />
+              <CircuitBoard className="h-12 w-12 text-brand-blue" strokeWidth={1} />
+              <span className="absolute -right-1 top-1/2 h-2 w-2 animate-pulse rounded-full bg-brand-blue" />
+              <span className="absolute left-1/2 -top-1 h-2 w-2 animate-pulse rounded-full bg-brand-blue [animation-delay:900ms]" />
+            </div>
+          </div>
+        </section>
+
         <section id="open-positions" className="bg-[#F4F7FC]">
           <div className="mx-auto max-w-[1280px] px-4 py-12 sm:px-6 md:py-16 lg:px-8">
             <div className="flex flex-wrap items-end justify-between gap-5 border-b border-border pb-6">
@@ -90,42 +126,6 @@ export default function CareersPage() {
                   </Link>
                 </Reveal>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Compact careers hero */}
-        <section className="relative isolate overflow-hidden bg-navy text-navy-foreground">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:42px_42px]" aria-hidden="true" />
-          <CircuitPattern tone="dark" className="absolute inset-0 h-full w-full opacity-55" />
-          <div className="relative mx-auto flex min-h-[300px] max-w-[1280px] items-center justify-between gap-10 px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
-            <div className="max-w-3xl">
-              <nav aria-label="Breadcrumb" className="mb-3 hidden text-sm text-navy-foreground/55 sm:block">
-                <Link href="/" className="transition-colors hover:text-white">Home</Link>
-                <span className="px-2">/</span>
-                <span className="text-white">Careers</span>
-              </nav>
-              <SectionLabel tone="light">Careers at NXTwave</SectionLabel>
-              <h2 className="mt-3 text-balance text-3xl leading-tight tracking-tight sm:text-5xl">
-                Build the future of silicon.
-              </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-navy-foreground/75 sm:text-lg">
-                Join a team of engineers driving high-impact semiconductor innovations that connect the world to chips. We hire for depth, curiosity, and craftsmanship.
-              </p>
-              <div className="mt-3 flex flex-col gap-2 sm:mt-4 sm:flex-row sm:gap-3">
-                <Link href="#open-positions" className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-blue px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
-                  View open positions <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-                <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
-                  Send your profile <MoveUpRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-            <div className="relative hidden h-40 w-40 flex-none items-center justify-center border border-brand-blue/50 lg:flex" aria-hidden="true">
-              <div className="absolute inset-5 border border-white/15" />
-              <CircuitBoard className="h-12 w-12 text-brand-blue" strokeWidth={1} />
-              <span className="absolute -right-1 top-1/2 h-2 w-2 animate-pulse rounded-full bg-brand-blue" />
-              <span className="absolute left-1/2 -top-1 h-2 w-2 animate-pulse rounded-full bg-brand-blue [animation-delay:900ms]" />
             </div>
           </div>
         </section>
