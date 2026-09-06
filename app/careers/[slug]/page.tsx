@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowLeft, Briefcase, MapPin } from 'lucide-react'
+import { ArrowLeft, Briefcase } from 'lucide-react'
 import { ApplicationForm } from '@/components/application-form'
 import { SectionLabel } from '@/components/section-label'
 import { CircuitPattern } from '@/components/circuit-pattern'
@@ -36,7 +36,7 @@ export default async function RolePage({ params }: RolePageProps) {
           <Link href="/careers" className="inline-flex items-center gap-2 text-sm text-navy-foreground/65 transition-colors hover:text-white"><ArrowLeft className="h-4 w-4" aria-hidden="true" /> Back to careers</Link>
           <SectionLabel className="mt-10" tone="light">Open position</SectionLabel>
           <h1 className="mt-4 max-w-4xl text-4xl leading-tight tracking-tight md:text-6xl">{job.title}</h1>
-          <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm text-navy-foreground/70"><span className="inline-flex items-center gap-2"><Briefcase className="h-4 w-4 text-brand-blue" aria-hidden="true" />{job.department}</span><span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-brand-blue" aria-hidden="true" />{job.location}</span></div>
+          <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm text-navy-foreground/70"><span className="inline-flex items-center gap-2"><Briefcase className="h-4 w-4 text-brand-blue" aria-hidden="true" />{job.department}</span></div>
         </div>
       </section>
       <main className="bg-[#F4F7FC]">

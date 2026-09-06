@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Briefcase, MapPin, X } from 'lucide-react'
+import { ArrowRight, X } from 'lucide-react'
 import { useRef } from 'react'
 import type { Job } from '@/data/jobs'
 
@@ -18,7 +18,7 @@ export function CareerRoleCard({ job }: { job: Job }) {
 
   return (
     <>
-      <article className="group flex w-full flex-col gap-4 rounded-xl border border-brand-blue/20 border-l-4 border-l-brand-blue bg-white p-5 shadow-[0_14px_36px_-24px_rgba(15,43,93,0.55)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-brand-blue/70 hover:shadow-[0_20px_42px_-20px_rgba(47,111,224,0.38)] sm:flex-row sm:items-center sm:justify-between sm:p-6">
+      <article className="group flex w-full flex-col gap-4 rounded-xl border border-brand-blue/15 bg-white p-5 shadow-[0_12px_34px_-24px_rgba(15,43,93,0.5)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-brand-blue/70 hover:shadow-[0_18px_38px_-20px_rgba(47,111,224,0.35)] sm:flex-row sm:items-center sm:justify-between sm:p-6">
         <button
           type="button"
           onClick={openPreview}
@@ -31,16 +31,6 @@ export function CareerRoleCard({ job }: { job: Job }) {
           <h2 className="mt-2 text-xl font-semibold tracking-tight text-navy transition-colors duration-300 group-hover:text-brand-blue sm:text-2xl">
             {job.title}
           </h2>
-          <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
-            <span className="inline-flex items-center gap-1.5">
-              <MapPin className="h-4 w-4 flex-none text-brand-blue" aria-hidden="true" />
-              {job.location}
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <Briefcase className="h-4 w-4 flex-none text-brand-blue" aria-hidden="true" />
-              {job.employmentType}
-            </span>
-          </div>
         </button>
         <div className="flex-none border-t border-border pt-3 sm:min-w-28 sm:border-t-0 sm:pt-0 sm:text-right">
           <Link
@@ -77,10 +67,6 @@ export function CareerRoleCard({ job }: { job: Job }) {
             >
               <X className="h-5 w-5" aria-hidden="true" />
             </button>
-          </div>
-          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
-            <span className="inline-flex items-center gap-1.5"><MapPin className="h-4 w-4 text-brand-blue" aria-hidden="true" />{job.location}</span>
-            <span className="inline-flex items-center gap-1.5"><Briefcase className="h-4 w-4 text-brand-blue" aria-hidden="true" />{job.employmentType}</span>
           </div>
         </div>
         <div className="p-5 sm:p-7">
