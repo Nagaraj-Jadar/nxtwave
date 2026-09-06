@@ -59,7 +59,6 @@ export function EngineeringSpectrum() {
           </Reveal>
           <Reveal delay={100} className="relative hidden min-h-64 lg:block">
             <div aria-hidden="true" className="absolute left-0 top-[10%] h-[80%] border-l border-brand-blue/30" />
-            <p className="absolute left-6 top-9 max-w-20 text-[10px] font-bold uppercase tracking-[0.22em] text-navy/55">From Concept to Silicon</p>
             <div className="absolute inset-y-0 right-[-12%] w-[115%] opacity-95 [mask-image:linear-gradient(to_right,transparent,black_28%,black_82%,transparent)]">
               <Image src="/hero-chip.png" alt="" fill sizes="40vw" className="object-contain object-right lg:scale-110" />
             </div>
