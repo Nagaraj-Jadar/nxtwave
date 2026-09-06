@@ -35,23 +35,22 @@ export function CoreStrengths() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-1 gap-x-16 gap-y-10 sm:grid-cols-2 sm:gap-x-14 sm:gap-y-12 lg:mt-8 lg:min-h-0 lg:flex-1 lg:grid-rows-2 lg:gap-y-8 xl:gap-x-20 xl:gap-y-10">
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-5 lg:mt-8 lg:min-h-0 lg:flex-1 lg:grid-rows-2 lg:gap-4 xl:gap-5">
           {strengths.map((strength, index) => (
             <Reveal
               key={strength.title}
               delay={120 + index * 80}
-              className="group min-h-[200px] py-2 sm:py-3 lg:min-h-0 lg:py-2"
+              className="group flex min-h-[220px] flex-col rounded-2xl border border-brand-blue/15 bg-white/85 p-6 shadow-[0_12px_28px_-24px_rgba(15,43,93,0.45)] sm:p-7 lg:min-h-0 lg:p-6 xl:p-7"
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-blue/45 text-brand-blue transition-colors duration-300 group-hover:border-brand-blue group-hover:bg-brand-blue group-hover:text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue">
                 <strength.icon className="h-5 w-5" aria-hidden="true" />
               </div>
-              <h3 className="relative mt-5 min-h-[3.65rem] max-w-md lg:h-[3.65rem]">
-                <span className="flex min-h-[3.65rem] w-full items-center rounded-[1.15rem] bg-[#3d4fd6] px-5 font-serif text-[1.2rem] font-semibold leading-none text-white sm:px-6 sm:whitespace-nowrap sm:text-[1.02rem] lg:h-full lg:min-h-0 lg:text-[1.06rem] xl:text-[1.12rem]">
+              <h3 className="mt-5 max-w-full">
+                <span className="inline-flex min-h-8 max-w-full items-center rounded-full border border-brand-blue px-4 py-1.5 font-serif text-[1.12rem] font-semibold leading-tight text-white shadow-[inset_0_0_12px_rgba(61,79,214,0.16)] sm:whitespace-nowrap sm:text-[0.98rem] lg:text-[1.02rem] xl:text-[1.08rem]" style={{ background: 'linear-gradient(90deg, #3d4fd6 0%, #3d4fd6 42%, rgba(61, 79, 214, 0.78) 64%, rgba(61, 79, 214, 0.36) 82%, rgba(61, 79, 214, 0.06) 100%)' }}>
                   {strength.title}
                 </span>
-                <span aria-hidden="true" className="absolute right-4 top-1/2 h-px w-8 -translate-y-1/2 bg-white/35" />
               </h3>
-              <p className="mt-3 max-w-md text-[0.9rem] font-medium leading-6 text-[#1f2937] lg:text-[0.875rem] xl:text-[0.9rem]">
+              <p className="mt-4 max-w-md text-[0.9rem] font-medium leading-6 text-[#1f2937] lg:text-[0.84rem] xl:text-[0.9rem]">
                 {strength.description}
               </p>
             </Reveal>
