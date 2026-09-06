@@ -143,6 +143,24 @@ export function SiteHeader() {
             </button>
           </div>
           <nav aria-label="Site" className="flex flex-1 flex-col gap-1 overflow-y-auto p-6">
+            <Link
+              href="/"
+              onClick={() => setOpen(false)}
+              aria-current={pathname === '/' ? 'page' : undefined}
+              className={cn(
+                'group flex items-center justify-between rounded-lg px-4 py-4 text-lg font-medium text-navy transition-colors hover:bg-secondary',
+                pathname === '/' && 'bg-secondary/70',
+              )}
+            >
+              Home
+              <ArrowRight
+                className={cn(
+                  'h-5 w-5 text-brand-blue opacity-0 transition-opacity group-hover:opacity-100',
+                  pathname === '/' && 'opacity-100',
+                )}
+                aria-hidden="true"
+              />
+            </Link>
             {navLinks.map((link) =>
               link.label === 'Services' ? (
                 <div key={link.href} className="rounded-lg">
