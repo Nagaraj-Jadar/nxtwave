@@ -7,7 +7,7 @@ import { ChevronDown, ChevronRight, Menu, X, ArrowRight } from 'lucide-react'
 import { Logo } from '@/components/logo'
 import { navLinks } from '@/lib/site'
 import { cn } from '@/lib/utils'
-import { capabilities } from '@/data/content'
+import { serviceLinks } from '@/lib/site'
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
@@ -56,13 +56,13 @@ export function SiteHeader() {
                   <div className="pointer-events-none absolute left-1/2 top-full z-50 w-[min(46rem,calc(100vw-2rem))] -translate-x-1/2 -translate-y-2 border border-border bg-background p-5 opacity-0 shadow-xl transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
                     <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Services</p>
                     <div className="grid grid-cols-2 gap-x-3 gap-y-1">
-                      {capabilities.map((capability) => (
+                      {serviceLinks.map((service) => (
                         <Link
-                          key={capability.id}
-                          href={`/capabilities#${capability.id}`}
+                          key={service.id}
+                          href={`/capabilities#${service.id}`}
                           className="group/card flex min-w-0 items-center gap-3 border-l-2 border-transparent px-3 py-3 transition-colors hover:border-brand-blue hover:bg-secondary/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                         >
-                          <span className="min-w-0 flex-1 font-sans text-sm font-medium leading-snug text-navy transition-colors group-hover/card:font-semibold">{capability.title}</span>
+                          <span className="min-w-0 flex-1 font-sans text-sm font-medium leading-snug text-navy transition-colors group-hover/card:font-semibold">{service.title}</span>
                           <ChevronRight className="h-4 w-4 flex-none text-brand-blue transition-transform group-hover/card:translate-x-1" aria-hidden="true" />
                         </Link>
                       ))}
@@ -159,14 +159,14 @@ export function SiteHeader() {
                   <div id="mobile-capabilities" className={cn('grid transition-[grid-template-rows] duration-200', capabilitiesOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]')}>
                     <div className="min-h-0 overflow-hidden">
                       <div className="space-y-3 px-4 pb-3">
-                        {capabilities.map((capability) => (
+                        {serviceLinks.map((service) => (
                           <Link
-                            key={capability.id}
-                            href={`/capabilities#${capability.id}`}
+                            key={service.id}
+                            href={`/capabilities#${service.id}`}
                             onClick={() => setOpen(false)}
                             className="flex items-start gap-3 border-l-2 border-brand-blue/30 py-2 pl-3 text-sm text-navy transition-colors hover:border-brand-blue hover:text-brand-blue"
                           >
-                            <span className="font-semibold leading-snug">{capability.title}</span>
+                            <span className="font-semibold leading-snug">{service.title}</span>
                           </Link>
                         ))}
                         <Link href="/capabilities" onClick={() => setOpen(false)} className="inline-flex items-center gap-2 pt-2 text-sm font-semibold text-brand-blue">

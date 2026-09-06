@@ -4,8 +4,10 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { ArrowRight, CircuitBoard, Cpu, Gauge, Microscope, Radio, ShieldCheck, SquareStack, Waves, type LucideIcon } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
+import { serviceLinks } from '@/lib/site'
 
 type Service = {
+  id: string
   title: string
   tagline: string
   description: string
@@ -13,14 +15,14 @@ type Service = {
 }
 
 const services: Service[] = [
-  { title: 'RTL Design & Microarchitecture', tagline: 'Transforming Architecture into High-Quality, Implementation-Ready RTL', description: 'Our RTL Design and Microarchitecture practice translates system-level requirements into scalable, efficient, and resilient hardware implementations, addressing functionality, performance, power, and area objectives from the earliest stages.', icon: Cpu },
-  { title: 'Design Verification', tagline: 'Ensuring Functional Correctness Through Rigorous Verification Methodologies', description: 'Our Design Verification services provide exhaustive functional verification across IP, subsystem, and SoC levels, using scalable methodologies to identify defects early and provide confidence before silicon implementation.', icon: ShieldCheck },
-  { title: 'Design for Test (DFT)', tagline: 'Engineering Silicon for Manufacturability, Testability, and Production Excellence', description: 'Our DFT services deliver comprehensive test structures that improve test coverage, defect detection, and manufacturing efficiency while embedding testability into the broader SoC architecture.', icon: CircuitBoard },
-  { title: 'Physical Design', tagline: 'Converting RTL into High-Performance, Manufacturable Silicon', description: 'Our Physical Design services transform validated RTL and synthesized netlists into optimized, tape-out-ready layouts while focusing on performance, power, area, timing, and manufacturability.', icon: SquareStack },
-  { title: 'Physical Verification', tagline: 'Ensuring Layout Accuracy and Foundry Compliance Before Tape-Out', description: 'Our Physical Verification services validate the final layout against stringent manufacturing and foundry requirements, identifying geometric, connectivity, reliability, and manufacturability issues before tape-out.', icon: Microscope },
-  { title: 'Analog & Mixed-Signal', tagline: 'Advanced Analog and Mixed-Signal Engineering for Complex Semiconductor Systems', description: 'Our Analog and Mixed-Signal services support high-performance analog, mixed-signal, and analog-digital integrated circuits through circuit development, integration, behavioral modeling, simulation, verification, and characterization.', icon: Waves },
-  { title: 'Post-Silicon Validation', tagline: 'Validating Silicon Performance from First Power-On to Production Readiness', description: 'Our Post-Silicon Validation services cover silicon bring-up, functional validation, characterization, debugging, and production readiness, bridging the gap between pre-silicon simulation and real-world silicon behavior.', icon: Gauge },
-  { title: 'Embedded Systems Engineering', tagline: 'Intelligent, Reliable, and High-Performance Embedded Engineering', description: 'Our Embedded Systems Engineering services bridge semiconductor hardware with real-world applications through firmware, BSP, device drivers, operating systems, middleware, connectivity, and hardware-software integration.', icon: Radio },
+  { id: serviceLinks[0].id, title: 'RTL Design & Microarchitecture', tagline: 'Transforming Architecture into High-Quality, Implementation-Ready RTL', description: 'Our RTL Design and Microarchitecture practice translates system-level requirements into scalable, efficient, and resilient hardware implementations, addressing functionality, performance, power, and area objectives from the earliest stages.', icon: Cpu },
+  { id: serviceLinks[1].id, title: 'Design Verification', tagline: 'Ensuring Functional Correctness Through Rigorous Verification Methodologies', description: 'Our Design Verification services provide exhaustive functional verification across IP, subsystem, and SoC levels, using scalable methodologies to identify defects early and provide confidence before silicon implementation.', icon: ShieldCheck },
+  { id: serviceLinks[2].id, title: 'Design for Test (DFT)', tagline: 'Engineering Silicon for Manufacturability, Testability, and Production Excellence', description: 'Our DFT services deliver comprehensive test structures that improve test coverage, defect detection, and manufacturing efficiency while embedding testability into the broader SoC architecture.', icon: CircuitBoard },
+  { id: serviceLinks[3].id, title: 'Physical Design', tagline: 'Converting RTL into High-Performance, Manufacturable Silicon', description: 'Our Physical Design services transform validated RTL and synthesized netlists into optimized, tape-out-ready layouts while focusing on performance, power, area, timing, and manufacturability.', icon: SquareStack },
+  { id: serviceLinks[4].id, title: 'Physical Verification', tagline: 'Ensuring Layout Accuracy and Foundry Compliance Before Tape-Out', description: 'Our Physical Verification services validate the final layout against stringent manufacturing and foundry requirements, identifying geometric, connectivity, reliability, and manufacturability issues before tape-out.', icon: Microscope },
+  { id: serviceLinks[5].id, title: 'Analog & Mixed-Signal', tagline: 'Advanced Analog and Mixed-Signal Engineering for Complex Semiconductor Systems', description: 'Our Analog and Mixed-Signal services support high-performance analog, mixed-signal, and analog-digital integrated circuits through circuit development, integration, behavioral modeling, simulation, verification, and characterization.', icon: Waves },
+  { id: serviceLinks[6].id, title: 'Post-Silicon Validation', tagline: 'Validating Silicon Performance from First Power-On to Production Readiness', description: 'Our Post-Silicon Validation services cover silicon bring-up, functional validation, characterization, debugging, and production readiness, bridging the gap between pre-silicon simulation and real-world silicon behavior.', icon: Gauge },
+  { id: serviceLinks[7].id, title: 'Embedded Systems Engineering', tagline: 'Intelligent, Reliable, and High-Performance Embedded Engineering', description: 'Our Embedded Systems Engineering services bridge semiconductor hardware with real-world applications through firmware, BSP, device drivers, operating systems, middleware, connectivity, and hardware-software integration.', icon: Radio },
 ]
 
 export function EngineeringSpectrum() {
@@ -68,6 +70,7 @@ export function EngineeringSpectrum() {
           {visibleServices.map((service, index) => (
             <Reveal
               key={service.title}
+              id={service.id}
               delay={(index % 3) * 80}
               className="relative flex h-full min-h-[340px] flex-col overflow-hidden rounded-xl border border-border bg-card p-6 shadow-[0_12px_28px_-24px_rgba(15,43,93,0.38)] transition-transform duration-300 hover:-translate-y-0.5 sm:p-7"
             >

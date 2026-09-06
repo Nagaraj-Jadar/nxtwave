@@ -16,12 +16,14 @@ export const navLinks = [
   { label: 'Contact', href: '/contact' },
 ]
 
-export const footerServices = [
-  'Silicon Architecture',
-  'Functional Verification',
-  'Physical Implementation',
-  'Analog & Mixed-Signal',
-  'Prototyping & Systems',
-  'Post-Silicon Validation',
+export const serviceLinks = [
+  { title: 'RTL Design & Microarchitecture', id: 'rtl-design-microarchitecture' },
+  { title: 'Design Verification', id: 'design-verification' },
+  { title: 'Design for Test (DFT)', id: 'design-for-test' },
+  { title: 'Physical Design', id: 'physical-design' },
+  { title: 'Physical Verification', id: 'physical-verification' },
+  { title: 'Analog & Mixed-Signal', id: 'analog-mixed-signal' },
+  { title: 'Post-Silicon Validation', id: 'post-silicon-validation' },
+  { title: 'Embedded Systems Engineering', id: 'embedded-systems-engineering' },
 ]
 

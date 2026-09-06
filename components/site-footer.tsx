@@ -3,7 +3,7 @@ import { Mail, MapPin } from 'lucide-react'
 import { Logo } from '@/components/logo'
 import {
   siteConfig,
-  footerServices,
+  serviceLinks,
 } from '@/lib/site'
 import { NewsletterForm } from '@/components/newsletter-form'
 
@@ -44,13 +44,13 @@ export function SiteFooter() {
           </div>
 
           <FooterColumn title="Services">
-            {footerServices.map((s) => (
-              <li key={s}>
+            {serviceLinks.map((service) => (
+              <li key={service.id}>
                 <Link
-                  href="/capabilities"
+                  href={`/capabilities#${service.id}`}
                   className="text-sm text-muted-foreground transition-colors hover:text-navy"
                 >
-                  {s}
+                  {service.title}
                 </Link>
               </li>
             ))}
