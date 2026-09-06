@@ -146,11 +146,25 @@ export default function CareersPage() {
         <section className="bg-[#F4F7FC]">
           <div className="mx-auto grid max-w-[1280px] gap-8 px-4 py-12 sm:px-6 md:py-16 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
             <div>
-              <SectionLabel>Build the Future of Silicon</SectionLabel>
+              <div className="py-2">
+                <div className="flex items-center gap-2.5" aria-hidden="true">
+                  <span className="h-2 w-2 rounded-full bg-brand-blue" />
+                  <span className="h-px w-12 bg-brand-blue" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
+                </div>
+                <p className="mt-5 font-serif text-[2.35rem] font-semibold leading-[1.06] text-brand-blue sm:text-[2.75rem] lg:text-[3.1rem]">
+                  Build the Future of Silicon
+                </p>
+                <div className="mt-5 flex items-center gap-2" aria-hidden="true">
+                  <span className="h-px w-36 bg-brand-blue" />
+                  <span className="h-1 w-1 rounded-full bg-brand-blue" />
+                  <span className="h-px w-8 bg-brand-blue/40" />
+                </div>
+              </div>
               <h2 className="mt-4 max-w-lg text-4xl leading-tight tracking-tight md:text-5xl">Engineering where expertise meets impact.</h2>
             </div>
             <div>
-              <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              <p className="max-w-2xl text-justify text-lg leading-relaxed text-muted-foreground">
                 NXTwave brings together deep engineering expertise across the semiconductor design lifecycle. Our teams solve demanding problems from architecture through GDSII and into silicon, with every discipline contributing to first-pass success.
               </p>
               <div className="mt-8 grid gap-4 sm:grid-cols-3">

@@ -32,13 +32,6 @@ export function MissionSection() {
                 className="aspect-[9/7] h-auto w-full rounded-[1rem] object-cover"
                 priority={false}
               />
-              <div className="absolute left-5 top-5 flex items-center gap-2 border border-white/50 bg-navy/90 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-sm sm:left-6 sm:top-6">
-                <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
-                VLSI Engineering
-              </div>
-            </div>
-            <div className="absolute -bottom-1 left-5 border-l border-brand-blue pl-3 text-[9px] font-semibold uppercase tracking-[0.2em] text-navy/55 sm:left-8">
-              End-to-End Expertise
             </div>
           </div>
         </Reveal>

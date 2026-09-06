@@ -42,7 +42,21 @@ export default async function RolePage({ params }: RolePageProps) {
       <main className="bg-[#F4F7FC]">
         <div className="mx-auto grid max-w-[1280px] gap-14 px-4 py-16 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(23rem,0.7fr)] lg:px-8 lg:py-24">
           <article className="min-w-0 rounded-2xl border border-border bg-white p-6 shadow-sm sm:p-9 lg:pr-10">
-            <SectionLabel>About the role</SectionLabel>
+            <div className="py-2">
+              <div className="flex items-center gap-2.5" aria-hidden="true">
+                <span className="h-2 w-2 rounded-full bg-brand-blue" />
+                <span className="h-px w-12 bg-brand-blue" />
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
+              </div>
+              <p className="mt-5 font-serif text-[2.35rem] font-semibold leading-[1.06] text-brand-blue sm:text-[2.75rem] lg:text-[3.1rem]">
+                About the Role
+              </p>
+              <div className="mt-5 flex items-center gap-2" aria-hidden="true">
+                <span className="h-px w-36 bg-brand-blue" />
+                <span className="h-1 w-1 rounded-full bg-brand-blue" />
+                <span className="h-px w-8 bg-brand-blue/40" />
+              </div>
+            </div>
             <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">{job.overview}</p>
             <RoleSection title="What you&apos;ll do" items={job.responsibilities} />
             <RoleSection title="What you bring" items={job.requiredQualifications} />
