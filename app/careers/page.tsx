@@ -2,13 +2,14 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import {
   ArrowRight,
-  MapPin,
-  Briefcase,
-  Clock,
   CircuitBoard,
+  Cpu,
+  FileSearch,
   MoveUpRight,
+  Users,
 } from 'lucide-react'
 import { jobs } from '@/data/jobs'
+import { CareerRoleCard } from '@/components/career-role-card'
 import { SectionLabel } from '@/components/section-label'
 import { Reveal } from '@/components/reveal'
 import { CircuitPattern } from '@/components/circuit-pattern'
@@ -19,34 +20,6 @@ export const metadata: Metadata = {
   title: 'Careers',
   description:
     'Join NXTwave Semiconductor and build high-impact silicon. Explore open roles across RTL design, verification, physical design, DFT, and analog/mixed-signal.',
-}
-
-function JobMeta({ job }: { job: (typeof jobs)[number] }) {
-  return (
-    <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
-      <span className="inline-flex items-center gap-1.5">
-        <MapPin className="h-4 w-4 flex-none text-brand-blue" aria-hidden="true" />
-        {job.location}
-      </span>
-      <span className="inline-flex items-center gap-1.5">
-        <Briefcase className="h-4 w-4 flex-none text-brand-blue" aria-hidden="true" />
-        {job.employmentType}
-      </span>
-      <span className="inline-flex items-center gap-1.5">
-        <Clock className="h-4 w-4 flex-none text-brand-blue" aria-hidden="true" />
-        {job.experienceLevel}
-      </span>
-    </div>
-  )
-}
-
-function ApplyNowCta() {
-  return (
-    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-navy transition-colors duration-300 group-hover:text-brand-blue">
-      Apply now
-      <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1.5" aria-hidden="true" />
-    </span>
-  )
 }
 
 export default function CareersPage() {
@@ -65,7 +38,12 @@ export default function CareersPage() {
                 <span className="px-2">/</span>
                 <span className="text-white">Careers</span>
               </nav>
-              <SectionLabel tone="light">Careers at NXTwave</SectionLabel>
+              <SectionLabel
+                tone="light"
+                className="inline-flex rounded-full border border-brand-blue/70 bg-brand-blue/20 px-3 py-1.5 text-[11px] tracking-[0.22em] text-[#c9d9ff] shadow-[0_0_24px_rgba(47,111,224,0.2)]"
+              >
+                Careers at NXTwave
+              </SectionLabel>
               <h1 className="mt-3 text-balance text-3xl leading-tight tracking-tight sm:text-5xl">
                 Build the future of silicon.
               </h1>
@@ -90,12 +68,13 @@ export default function CareersPage() {
           </div>
         </section>
 
-        <section id="open-positions" className="bg-[#F4F7FC]">
+        <section id="open-positions" className="relative overflow-hidden border-y border-brand-blue/15 bg-[linear-gradient(135deg,#eef4ff_0%,#f8faff_48%,#edf3fc_100%)]">
+          <div className="absolute inset-x-0 top-0 h-1 bg-brand-blue" aria-hidden="true" />
           <div className="mx-auto max-w-[1280px] px-4 py-12 sm:px-6 md:py-16 lg:px-8">
-            <div className="flex flex-wrap items-end justify-between gap-5 border-b border-border pb-6">
+            <div className="flex flex-wrap items-end justify-between gap-5 border-b border-brand-blue/20 pb-6">
               <div>
-                <SectionLabel>Open Positions</SectionLabel>
-                <h1 className="mt-3 text-3xl tracking-tight sm:text-4xl">{jobs.length} roles currently open</h1>
+                <SectionLabel className="inline-flex rounded-full border border-brand-blue/25 bg-white/70 px-3 py-1.5 shadow-sm">Join Our Team</SectionLabel>
+                <h1 className="mt-4 text-3xl tracking-tight sm:text-4xl">Explore opportunities to build what&apos;s next.</h1>
               </div>
               <div className="text-left sm:text-right">
                 <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue transition-colors hover:text-navy">
@@ -107,23 +86,7 @@ export default function CareersPage() {
             <div className="mt-8 flex flex-col gap-4">
               {jobs.map((job, i) => (
                 <Reveal key={job.slug} delay={i * 60}>
-                  <Link
-                    href={`/careers/${job.slug}`}
-                    className="group flex w-full flex-col gap-4 rounded-xl border border-brand-blue/15 bg-white p-5 shadow-[0_12px_34px_-24px_rgba(15,43,93,0.5)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-brand-blue/70 hover:shadow-[0_18px_38px_-20px_rgba(47,111,224,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:flex-row sm:items-center sm:justify-between sm:p-6"
-                  >
-                    <div className="min-w-0">
-                      <span className="inline-flex rounded-full bg-secondary px-3 py-1 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-navy">
-                        {job.department}
-                      </span>
-                      <h2 className="mt-2 text-xl font-semibold tracking-tight text-navy transition-colors duration-300 group-hover:text-brand-blue sm:text-2xl">
-                        {job.title}
-                      </h2>
-                      <JobMeta job={job} />
-                    </div>
-                    <div className="flex-none border-t border-border pt-3 sm:border-t-0 sm:pt-0 sm:min-w-24 sm:text-right">
-                      <ApplyNowCta />
-                    </div>
-                  </Link>
+                  <CareerRoleCard job={job} />
                 </Reveal>
               ))}
             </div>
@@ -131,28 +94,51 @@ export default function CareersPage() {
         </section>
 
         {/* How we hire */}
-        <section className="bg-background">
-          <div className="mx-auto max-w-[1280px] px-4 py-12 sm:px-6 md:py-16 lg:px-8">
-            <div className="max-w-2xl">
-              <SectionLabel>How We Hire</SectionLabel>
-              <h2 className="mt-4 text-4xl tracking-tight md:text-5xl">A focused, engineer-led process</h2>
+        <section className="relative isolate overflow-hidden bg-background py-12 lg:py-20">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.035]" style={{ backgroundImage: 'linear-gradient(#0f2b5d 1px, transparent 1px), linear-gradient(90deg, #0f2b5d 1px, transparent 1px)', backgroundSize: '52px 52px' }} />
+          <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-14 lg:items-end">
+              <div>
+                <div className="py-2">
+                  <div className="flex items-center gap-2.5" aria-hidden="true">
+                    <span className="h-2 w-2 rounded-full bg-brand-blue" />
+                    <span className="h-px w-12 bg-brand-blue" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
+                  </div>
+                  <p className="mt-5 font-serif text-[2.35rem] font-semibold leading-[1.06] text-brand-blue sm:text-[2.75rem] lg:text-[3.1rem]">
+                    How We Hire
+                  </p>
+                  <div className="mt-5 flex items-center gap-2" aria-hidden="true">
+                    <span className="h-px w-36 bg-brand-blue" />
+                    <span className="h-1 w-1 rounded-full bg-brand-blue" />
+                    <span className="h-px w-8 bg-brand-blue/40" />
+                  </div>
+                </div>
+                <h2 className="mt-4 max-w-xl text-4xl leading-[1.08] tracking-tight md:text-5xl">A focused, engineer-led process</h2>
+                <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
+                  Meet the people behind the work, explore the challenge, and find your place in the team.
+                </p>
+              </div>
+              <ol className="grid gap-8 sm:grid-cols-3">
+                {[
+                  ['01', 'REVIEW', 'Technical assessment by our lead architects.', FileSearch],
+                  ['02', 'DEEP-DIVE', 'Architecture and verification discussions.', Users],
+                  ['03', 'DELIVER', 'Fast-track integration into our engineering teams.', Cpu],
+                ].map(([number, title, description, Icon], i) => (
+                  <li key={number} className="relative">
+                    <div className="flex items-center gap-3" aria-hidden="true">
+                      <span className="inline-flex h-12 w-12 flex-none items-center justify-center rounded-full border border-brand-blue/45 bg-secondary text-brand-blue shadow-[0_8px_22px_-14px_rgba(47,111,224,0.8)]">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      {i < 2 && <span className="hidden h-px flex-1 bg-brand-blue/40 sm:block" />}
+                    </div>
+                    <span className="mt-4 block font-serif text-xl font-semibold text-brand-blue">{number}</span>
+                    <h3 className="mt-1 font-sans text-sm font-bold uppercase tracking-wider text-navy">{title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
+                  </li>
+                ))}
+              </ol>
             </div>
-            <ol className="mt-8 grid gap-4 md:grid-cols-3">
-              {[
-                ['01', 'REVIEW', 'Technical assessment by our lead architects.'],
-                ['02', 'DEEP-DIVE', 'Architecture and verification discussions.'],
-                ['03', 'DELIVER', 'Fast-track integration into our engineering teams.'],
-              ].map(([number, title, description]) => (
-                <li
-                  key={number}
-                  className="rounded-xl border border-brand-blue/15 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue/50 hover:shadow-md sm:p-6"
-                >
-                  <span className="font-sans text-sm font-semibold text-brand-blue">{number}</span>
-                  <h3 className="mt-5 text-xl text-navy">{title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
-                </li>
-              ))}
-            </ol>
           </div>
         </section>
 

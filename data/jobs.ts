@@ -5,7 +5,6 @@ export type Job = {
   location: string
   workModel: string
   employmentType: string
-  experienceLevel: string
   overview: string
   responsibilities: string[]
   requiredQualifications: string[]
@@ -22,7 +21,6 @@ export const jobs: Job[] = [
     location: 'Remote / Hybrid',
     workModel: 'Remote / Hybrid',
     employmentType: 'Full-time',
-    experienceLevel: 'Senior (6+ years)',
     overview:
       'We are looking for a Senior RTL Design Engineer to own microarchitecture and RTL implementation for complex SoC subsystems. You will translate architectural specifications into synthesizable, high-quality RTL and drive design closure alongside verification and physical design teams.',
     responsibilities: [
@@ -34,7 +32,6 @@ export const jobs: Job[] = [
     ],
     requiredQualifications: [
       'Bachelor’s or Master’s in Electrical/Electronics Engineering or related field.',
-      '6+ years of hands-on RTL design experience on production silicon.',
       'Strong proficiency in SystemVerilog and digital design fundamentals.',
       'Experience with synthesis, timing constraints (SDC), and STA concepts.',
     ],
@@ -58,7 +55,6 @@ export const jobs: Job[] = [
     location: 'San Jose, CA',
     workModel: 'On-site',
     employmentType: 'Full-time',
-    experienceLevel: 'Lead (10+ years)',
     overview:
       'As a Physical Design Lead, you will drive full-chip and block-level physical implementation from floorplanning through final sign-off on advanced process nodes, mentoring a team of PD engineers to first-pass success.',
     responsibilities: [
@@ -70,7 +66,6 @@ export const jobs: Job[] = [
     ],
     requiredQualifications: [
       'Master’s in Electrical Engineering or equivalent experience.',
-      '10+ years in physical design with tape-out ownership.',
       'Expertise with Innovus / ICC2 and PrimeTime.',
       'Deep understanding of sub-7nm implementation challenges.',
     ],
@@ -94,7 +89,6 @@ export const jobs: Job[] = [
     location: 'Austin, TX',
     workModel: 'Hybrid',
     employmentType: 'Full-time',
-    experienceLevel: 'Principal (12+ years)',
     overview:
       'We are seeking an SoC Architect to define next-generation system architectures spanning compute, memory, interconnect, and power. You will set the technical direction that guides design, verification, and implementation teams.',
     responsibilities: [
@@ -106,7 +100,6 @@ export const jobs: Job[] = [
     ],
     requiredQualifications: [
       'Master’s or PhD in Computer Engineering or related field.',
-      '12+ years of SoC architecture and design experience.',
       'Strong background in bus protocols and interconnect fabrics.',
       'Proven track record of shipped, high-complexity SoCs.',
     ],
@@ -130,7 +123,6 @@ export const jobs: Job[] = [
     location: 'Bangalore, IN',
     workModel: 'Hybrid',
     employmentType: 'Full-time',
-    experienceLevel: 'Mid–Senior (4+ years)',
     overview:
       'Join our DFT team to architect and implement test strategies that maximize fault coverage while minimizing test cost across our SoC portfolio.',
     responsibilities: [
@@ -142,7 +134,6 @@ export const jobs: Job[] = [
     ],
     requiredQualifications: [
       'Bachelor’s or Master’s in ECE or related field.',
-      '4+ years of DFT implementation experience.',
       'Hands-on with ATPG tools and scan methodologies.',
       'Understanding of fault models and coverage metrics.',
     ],
@@ -166,7 +157,6 @@ export const jobs: Job[] = [
     location: 'Remote',
     workModel: 'Remote',
     employmentType: 'Full-time',
-    experienceLevel: 'Mid–Senior (5+ years)',
     overview:
       'We are hiring an Analog Layout Designer to craft precision custom layouts for high-performance analog and mixed-signal circuits, ensuring matching, isolation, and reliability across process corners.',
     responsibilities: [
@@ -178,7 +168,6 @@ export const jobs: Job[] = [
     ],
     requiredQualifications: [
       'Diploma / Bachelor’s in Electronics or equivalent experience.',
-      '5+ years of analog / custom layout experience.',
       'Proficiency with Cadence Virtuoso layout tools.',
       'Strong grasp of analog layout matching and reliability rules.',
     ],
