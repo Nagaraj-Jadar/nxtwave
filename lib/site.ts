@@ -17,7 +17,7 @@ export const navLinks = [
 ]
 
 export const serviceLinks = [
-  { title: 'RTL Design & Microarchitecture', id: 'rtl-design-microarchitecture' },
+  { title: 'RTL Design & Microarchitecture', id: 'rtl-design-microarchitecture', href: '/capabilities/rtl-design-microarchitecture' },
   { title: 'Design Verification', id: 'design-verification' },
   { title: 'Design for Test (DFT)', id: 'design-for-test' },
   { title: 'Physical Design', id: 'physical-design' },

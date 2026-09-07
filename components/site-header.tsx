@@ -59,7 +59,7 @@ export function SiteHeader() {
                       {serviceLinks.map((service) => (
                         <Link
                           key={service.id}
-                          href={`/capabilities#${service.id}`}
+                          href={service.href ?? `/capabilities#${service.id}`}
                           className="group/card flex min-w-0 items-center gap-3 border-l-2 border-transparent px-3 py-3 transition-colors hover:border-brand-blue hover:bg-secondary/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                         >
                           <span className="min-w-0 flex-1 font-sans text-sm font-medium leading-snug text-navy transition-colors group-hover/card:font-semibold">{service.title}</span>
@@ -180,7 +180,7 @@ export function SiteHeader() {
                         {serviceLinks.map((service) => (
                           <Link
                             key={service.id}
-                            href={`/capabilities#${service.id}`}
+                            href={service.href ?? `/capabilities#${service.id}`}
                             onClick={() => setOpen(false)}
                             className="flex items-start gap-3 border-l-2 border-brand-blue/30 py-2 pl-3 text-sm text-navy transition-colors hover:border-brand-blue hover:text-brand-blue"
                           >

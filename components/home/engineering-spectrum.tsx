@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { ArrowRight, CircuitBoard, Cpu, Gauge, Microscope, Radio, ShieldCheck, SquareStack, Waves, type LucideIcon } from 'lucide-react'
+import Link from 'next/link'
 import { Reveal } from '@/components/reveal'
 import { serviceLinks } from '@/lib/site'
 
@@ -84,9 +85,9 @@ export function EngineeringSpectrum() {
                 {service.tagline}
               </p>
               <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-muted-foreground">{service.description}</p>
-              <button type="button" className="mt-4 inline-flex w-fit items-center gap-2 text-sm font-semibold text-brand-blue transition-colors hover:text-navy">
+              <Link href={service.id === 'rtl-design-microarchitecture' ? '/capabilities/rtl-design-microarchitecture' : `/capabilities#${service.id}`} className="mt-4 inline-flex w-fit items-center gap-2 text-sm font-semibold text-brand-blue transition-colors hover:text-navy">
                 See More <span aria-hidden="true" className="h-px w-6 bg-brand-blue/60" /> <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </button>
+              </Link>
             </Reveal>
           ))}
         </div>
