@@ -197,7 +197,8 @@
 }
 
 .animate-marquee {
-  animation: nxt-marquee 40s linear infinite;
+  animation: nxt-marquee 26s linear infinite;
+  gap: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

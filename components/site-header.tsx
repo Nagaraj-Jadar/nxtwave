@@ -47,7 +47,7 @@ export function SiteHeader() {
                 <div key={link.href} className="group relative py-8">
                   <Link
                     href={link.href}
-                    className="flex items-center gap-1 text-sm font-medium text-foreground/80 transition-colors group-hover:text-navy group-focus-within:text-navy"
+                    className="flex items-center gap-1 text-base font-medium text-foreground/80 transition-colors group-hover:text-navy group-focus-within:text-navy"
                   >
                     {link.label}
                     <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" aria-hidden="true" />
@@ -81,7 +81,7 @@ export function SiteHeader() {
                   href={link.href}
                   aria-current={pathname?.startsWith(link.href) ? 'page' : undefined}
                   className={cn(
-                    'relative py-8 text-sm font-medium text-foreground/80 transition-colors hover:text-navy',
+                    'relative py-8 text-base font-medium text-foreground/80 transition-colors hover:text-navy',
                     pathname?.startsWith(link.href) && 'text-navy',
                   )}
                 >
