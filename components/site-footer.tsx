@@ -1,11 +1,7 @@
 import Link from 'next/link'
 import { Mail, MapPin } from 'lucide-react'
 import { Logo } from '@/components/logo'
-import {
-  siteConfig,
-  serviceLinks,
-} from '@/lib/site'
-import { NewsletterForm } from '@/components/newsletter-form'
+import { siteConfig, serviceLinks } from '@/lib/site'
 
 const companyLinks = [
   { label: 'About', href: '/about' },
@@ -15,15 +11,30 @@ const companyLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5">
-          <div className="lg:col-span-2">
-            <Logo className="w-36" />
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[#020f24] text-white">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.16]"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(98, 165, 255, 0.16) 1px, transparent 1px), linear-gradient(90deg, rgba(98, 165, 255, 0.16) 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
+        }}
+      />
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[32%] border-l border-white/10 opacity-60 lg:block" aria-hidden="true" />
+      <div className="pointer-events-none absolute -bottom-14 right-0 h-52 w-52 rounded-full border border-brand-blue/20 opacity-40" aria-hidden="true" />
+
+      <div className="relative mx-auto max-w-[1280px] px-4 pb-8 pt-10 sm:px-6 lg:px-8">
+        <div className="grid gap-10 border-b border-white/10 pb-10 lg:grid-cols-[1.2fr_1fr_1fr_1.05fr]">
+          <div className="pr-4">
+            <div className="w-max">
+              <Logo className="w-36 sm:w-40" />
+            </div>
+            <p className="mt-5 max-w-[280px] text-sm leading-relaxed text-white/70">
               Driving technological breakthroughs with premier chip design and
               expert semiconductor craftsmanship.
             </p>
+
             <div className="mt-6 flex items-center gap-3">
               {[
                 { icon: <LinkedInIcon />, label: 'LinkedIn' },
@@ -35,85 +46,123 @@ export function SiteFooter() {
                   key={label}
                   aria-label={label}
                   title={`${label} (link coming soon)`}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-navy text-navy-foreground"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:border-brand-blue/60 hover:bg-brand-blue/10"
                 >
                   {icon}
                 </span>
               ))}
             </div>
+
+            <div className="mt-8 inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.26em] text-white/60">
+              <span>Chips</span>
+              <span className="h-px w-8 bg-brand-blue/70" aria-hidden="true" />
+              <span>for a brighter tomorrow</span>
+            </div>
           </div>
 
-          <FooterColumn title="Services">
-            {serviceLinks.map((service) => (
-              <li key={service.id}>
-                <Link
-                  href={service.href ?? `/capabilities#${service.id}`}
-                  className="text-sm text-muted-foreground transition-colors hover:text-navy"
-                >
-                  {service.title}
-                </Link>
-              </li>
-            ))}
-          </FooterColumn>
-
-          <FooterColumn title="Company">
-            {companyLinks.map((l) => (
-              <li key={l.href}>
-                <Link
-                  href={l.href}
-                  className="text-sm text-muted-foreground transition-colors hover:text-navy"
-                >
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </FooterColumn>
+          <div>
+            <h3 className="font-sans text-[13px] font-semibold uppercase tracking-[0.18em] text-white/90">
+              Services
+            </h3>
+            <div className="mt-5 h-px w-12 bg-brand-blue/80" aria-hidden="true" />
+            <ul className="mt-5 space-y-3">
+              {serviceLinks.map((service) => (
+                <li key={service.id}>
+                  <Link
+                    href={service.href ?? `/capabilities#${service.id}`}
+                    className="text-base text-white/75 transition-colors hover:text-white"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div>
-            <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-navy">
+            <h3 className="font-sans text-[13px] font-semibold uppercase tracking-[0.18em] text-white/90">
+              Company
+            </h3>
+            <div className="mt-5 h-px w-12 bg-brand-blue/80" aria-hidden="true" />
+            <ul className="mt-5 space-y-3">
+              {companyLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-base text-white/75 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-sans text-[13px] font-semibold uppercase tracking-[0.18em] text-white/90">
               Contact Us
             </h3>
-            <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 flex-none text-brand-blue" aria-hidden="true" />
+            <div className="mt-5 h-px w-12 bg-brand-blue/80" aria-hidden="true" />
+            <ul className="mt-5 space-y-4 text-base text-white/75">
+              <li className="flex items-start gap-3">
+                <MapPin className="mt-1 h-4 w-4 flex-none text-brand-blue" aria-hidden="true" />
                 <span>{siteConfig.contact.address}</span>
               </li>
-              <li className="flex items-start gap-2">
-                <Mail className="mt-0.5 h-4 w-4 flex-none text-brand-blue" aria-hidden="true" />
+              <li className="flex items-start gap-3">
+                <Mail className="mt-1 h-4 w-4 flex-none text-brand-blue" aria-hidden="true" />
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="transition-colors hover:text-navy"
+                  className="transition-colors hover:text-white"
                 >
                   {siteConfig.contact.email}
                 </a>
               </li>
             </ul>
+
+            <div className="mt-8 text-[11px] font-medium uppercase tracking-[0.18em] text-white/60">
+              <div className="h-px w-12 bg-brand-blue/80" aria-hidden="true" />
+              <div className="mt-4">Silicon Ideas</div>
+              <div className="mt-1">Real Impact</div>
+            </div>
           </div>
         </div>
 
-        <div className="mt-14 border-t border-border pt-10">
-          <div className="max-w-md">
-            <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-navy">
+        <div className="grid gap-6 border-b border-white/10 py-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
+          <div>
+            <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-white/80">
               Stay Connected
-            </h3>
-            <p className="mt-3 text-sm text-muted-foreground">
-              Subscribe to receive technical insights and silicon innovation
-              updates.
             </p>
-            <NewsletterForm />
+            <p className="mt-3 max-w-[420px] text-2xl font-medium leading-tight text-white">
+              Subscribe to receive technical insights and silicon innovation updates.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-0 self-end justify-end">
+            <div className="flex w-full max-w-[480px] items-center rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white/50 backdrop-blur-sm">
+              <Mail className="mr-3 h-4 w-4 text-white/60" aria-hidden="true" />
+              <input
+                type="email"
+                aria-label="Email Address"
+                placeholder="Email Address"
+                className="w-full border-0 bg-transparent text-sm text-white placeholder:text-white/40 focus:outline-none"
+              />
+            </div>
+            <button
+              type="button"
+              className="ml-3 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#4d9af7] to-[#7aaeff] px-5 py-3 text-sm font-semibold text-white shadow-[0_0_30px_rgba(93,170,255,0.35)] transition-opacity hover:opacity-95"
+            >
+              Subscribe <span aria-hidden="true">→</span>
+            </button>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 text-sm text-muted-foreground sm:flex-row sm:items-center">
-          <p>
-            &copy; {new Date().getFullYear()} NXTwave Semiconductor. All rights
-            reserved.
-          </p>
+        <div className="flex flex-col gap-4 pt-6 text-sm text-white/70 sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; {new Date().getFullYear()} NXTwave Semiconductor. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link href="/contact" className="transition-colors hover:text-navy">
+            <Link href="/contact" className="transition-colors hover:text-white">
               Privacy Policy
             </Link>
-            <Link href="/contact" className="transition-colors hover:text-navy">
+            <Link href="/contact" className="transition-colors hover:text-white">
               Terms of Use
             </Link>
           </div>
@@ -144,22 +193,5 @@ function GitHubIcon() {
     <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
       <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z" />
     </svg>
-  )
-}
-
-function FooterColumn({
-  title,
-  children,
-}: {
-  title: string
-  children: React.ReactNode
-}) {
-  return (
-    <div>
-      <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-navy">
-        {title}
-      </h3>
-      <ul className="mt-5 space-y-3">{children}</ul>
-    </div>
   )
 }
