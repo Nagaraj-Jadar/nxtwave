@@ -326,54 +326,16 @@ export default function RtlDesignPage() {
         <section className="relative overflow-hidden bg-[linear-gradient(135deg,#07142d_0%,#0c2348_54%,#071326_100%)] py-16 text-white sm:py-20 lg:py-24">
           <div className="absolute inset-0 opacity-25" aria-hidden="true" style={{ backgroundImage: 'linear-gradient(rgba(125,211,252,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(125,211,252,0.12) 1px, transparent 1px)', backgroundSize: '42px 42px' }} />
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
-            <div className="relative grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-              <div>
-                <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-cyan-300">Design principles</div>
-                <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-white sm:text-4xl">
-                  A disciplined path from concept to silicon execution.
-                </h2>
-                <div className="mt-8 h-px w-24 bg-cyan-300/70" />
-                <p className="mt-6 max-w-[420px] text-[15px] leading-7 text-slate-300">From system intent to implementation, every decision is shaped for clarity, verification, and downstream silicon reality.</p>
+            <div className="relative">
+              <div className="max-w-[700px]"><div className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">Design principles</div><h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.05em] text-white sm:text-4xl lg:text-5xl">A disciplined path from concept to silicon execution.</h2><p className="mt-5 max-w-[620px] text-base leading-7 text-slate-300">From system intent to implementation, every decision is shaped for clarity, verification, and downstream silicon reality.</p></div>
+              <div className="mt-8 grid gap-4 lg:grid-cols-3">
+                {[
+                  { heading: 'Implementation-aware RTL', text: 'We translate microarchitectural intent into implementation-aware RTL that balances performance, power, and area without sacrificing clarity or reuse.', icon: Cpu },
+                  { heading: 'Modular by design', text: 'Our approach is modular and verification-friendly, enabling clean handoff across the design stack while reducing integration risk and iteration cycles.', icon: Layers3 },
+                  { heading: 'Ready for downstream flow', text: 'Each design is shaped to be synthesis-ready, lint-clean, infrastructure-aware, and aligned with downstream physical implementation realities.', icon: ShieldCheck },
+                ].map(({ heading, text, icon: Icon }) => <div key={heading} className="rounded-2xl border border-sky-300/20 bg-white/[0.06] p-4 backdrop-blur-sm"><div className="flex items-center justify-end"><span className="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-300/25 bg-cyan-300/10 text-cyan-200"><Icon className="h-5 w-5" aria-hidden="true" /></span></div><h3 className="mt-4 font-sans text-lg font-semibold text-white">{heading}</h3><p className="mt-2 text-[15px] leading-7 text-slate-300">{text}</p></div>)}
               </div>
-
-              <div className="space-y-4">
-                <div className="flex gap-4 border-b border-sky-300/20 pb-5">
-                    <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-cyan-300/30 bg-cyan-300/10 text-cyan-200">
-                      <Cpu className="h-5 w-5" aria-hidden="true" />
-                    </div>
-                    <p className="text-justify text-[15px] leading-7 text-slate-300">We translate microarchitectural intent into implementation-aware RTL that balances performance, power, and area without sacrificing clarity or reuse.</p>
-                </div>
-
-                <div className="flex gap-4 border-b border-sky-300/20 pb-5">
-                    <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-cyan-300/30 bg-cyan-300/10 text-cyan-200">
-                      <Layers3 className="h-5 w-5" aria-hidden="true" />
-                    </div>
-                    <p className="text-justify text-[15px] leading-7 text-slate-300">Our approach is modular and verification-friendly, enabling clean handoff across the design stack while reducing integration risk and iteration cycles.</p>
-                </div>
-
-                <div className="flex gap-4 border-b border-sky-300/20 pb-5">
-                    <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-cyan-300/30 bg-cyan-300/10 text-cyan-200">
-                      <ShieldCheck className="h-5 w-5" aria-hidden="true" />
-                    </div>
-                    <p className="text-justify text-[15px] leading-7 text-slate-300">Each design is shaped to be synthesis-ready, lint-clean, infrastructure-aware, and aligned with downstream physical implementation realities.</p>
-                </div>
-              </div>
-
-              <div className="lg:col-span-2 border-t border-sky-300/20 pt-8">
-                <div className="flex items-center justify-between">
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-cyan-300">Deliverables</div>
-                  <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-sky-300">Ready to ship</div>
-                </div>
-
-                <div className="mt-6 grid gap-x-10 md:grid-cols-2">
-                  {deliverables.map((item) => (
-                    <div key={item} className="flex items-start gap-3 border-b border-sky-300/15 py-4">
-                      <span className="mt-1 text-cyan-300">↳</span>
-                      <p className="text-[15px] leading-7 text-slate-200">{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <div className="mt-12 border-t border-sky-300/20 pt-7"><div className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">Deliverables</div><div className="mt-6 grid gap-x-12 gap-y-3 md:grid-cols-2">{deliverables.map((item) => <div key={item} className="flex min-h-[52px] items-center gap-3 border-b border-sky-300/15 py-3"><span className="flex h-6 w-6 flex-none items-center justify-center rounded-full border border-cyan-300/35 text-xs text-cyan-300">-&gt;</span><p className="text-base leading-6 text-slate-200">{item}</p></div>)}</div></div>
             </div>
           </div>
         </section>

@@ -254,6 +254,24 @@
   animation: nxt-trace-flow 6s linear infinite;
 }
 
+@media (min-width: 1024px) {
+  section .lg\:grid-cols-3 {
+    margin-top: 2rem;
+  }
+
+  section .lg\:grid-cols-3 > div {
+    padding: 1rem;
+  }
+
+  section .lg\:grid-cols-3 > div h3 {
+    margin-top: 1rem;
+  }
+
+  section .lg\:grid-cols-3 > div p {
+    margin-top: 0.5rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-pulse-glow,
   .animate-trace-flow {
