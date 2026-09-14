@@ -19,7 +19,7 @@ export const navLinks = [
 export const serviceLinks = [
   { title: 'RTL Design & Microarchitecture', id: 'rtl-design-microarchitecture', href: '/capabilities/rtl-design-microarchitecture' },
   { title: 'Design Verification', id: 'design-verification', href: '/capabilities/design-verification' },
-  { title: 'Design for Test (DFT)', id: 'design-for-test' },
+  { title: 'Design for Test (DFT)', id: 'design-for-test', href: '/capabilities/design-for-test' },
   { title: 'Physical Design', id: 'physical-design' },
   { title: 'Physical Verification', id: 'physical-verification' },
   { title: 'Analog & Mixed-Signal', id: 'analog-mixed-signal' },

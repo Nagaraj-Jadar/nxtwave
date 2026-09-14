@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   Activity,
   ArrowRight,
@@ -281,30 +282,43 @@ export default function RtlDesignPage() {
           </div>
         </section>
 
-        <section className="bg-[#f7faff] py-14 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
-            <div className="mb-10 border-b border-sky-200 pb-8 sm:mb-12">
-              <h2 className="max-w-[820px] text-[3.2rem] font-semibold leading-[0.94] tracking-[-0.06em] text-slate-950 sm:text-[4rem] lg:text-[4.5rem]">
-                Core <span className="text-sky-600">Capabilities</span>
-              </h2>
-              <p className="mt-5 max-w-[760px] font-serif text-[1.35rem] font-semibold leading-tight text-slate-900 sm:text-[1.65rem]">
-                Architecture to RTL. Built for silicon.
-              </p>
-            </div>
-
-            <div className="grid gap-2.5 md:grid-cols-2 md:gap-x-4 md:gap-y-3">
-              {capabilities.map((item, index) => {
-                const Icon = capabilityIcons[index]
-
-                return (
-                <div key={item} className="flex min-h-[58px] items-center gap-4 rounded-lg border border-sky-100 bg-white px-3 py-2.5 shadow-[0_10px_24px_-22px_rgba(15,43,93,0.55)] sm:min-h-[62px] sm:px-4">
-                  <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-[#edf4ff] text-sky-600" aria-hidden="true">
-                    <Icon className="h-[18px] w-[18px]" strokeWidth={1.6} />
-                  </span>
-                  <p className="text-[13px] leading-5 text-[#172d54] sm:text-sm">{item}</p>
+        <section className="relative overflow-hidden bg-[#f4f8ff] py-14 sm:py-16 lg:py-20">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.035]" style={{ backgroundImage: 'linear-gradient(#0f2b5d 1px, transparent 1px), linear-gradient(90deg, #0f2b5d 1px, transparent 1px)', backgroundSize: '52px 52px' }} />
+          <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+            <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-[0.26em] text-sky-700">RTL engineering services</p>
+                <h2 className="mt-3 max-w-[560px] text-[3rem] font-semibold leading-[0.94] tracking-[-0.06em] text-slate-950 sm:text-[4rem] lg:text-[4.5rem]">
+                  Core <span className="text-sky-600">Capabilities</span>
+                </h2>
+                <p className="mt-5 max-w-[560px] font-serif text-[1.35rem] font-semibold leading-tight text-slate-900 sm:text-[1.55rem]">
+                  Architecture to RTL. Built for silicon.
+                </p>
+                <div className="relative mx-auto mt-2 aspect-square w-full max-w-[600px]">
+                  <Image
+                    src="/RTLdesign.png"
+                    alt="RTL design and microarchitecture engineering workflow"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 48vw"
+                    className="object-contain object-center drop-shadow-[0_24px_35px_rgba(37,99,235,0.14)] transition-transform duration-700 hover:-translate-y-1"
+                  />
                 </div>
-                )
-              })}
+              </div>
+
+              <div className="grid gap-2.5 sm:grid-cols-2 sm:gap-3 lg:pt-1">
+                {capabilities.map((item, index) => {
+                  const Icon = capabilityIcons[index]
+
+                  return (
+                    <div key={item} className="group flex min-h-[76px] items-center gap-3 rounded-xl border border-sky-100/90 bg-white/90 px-4 py-3 shadow-[0_14px_30px_-26px_rgba(15,43,93,0.6)] transition-all duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-white hover:shadow-[0_18px_34px_-24px_rgba(37,99,235,0.3)]">
+                      <span className="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-[#edf4ff] text-sky-600 transition-colors group-hover:bg-sky-100 group-hover:text-sky-700" aria-hidden="true">
+                        <Icon className="h-[19px] w-[19px]" strokeWidth={1.6} />
+                      </span>
+                      <p className="text-[13px] font-medium leading-5 text-[#172d54] sm:text-sm">{item}</p>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           </div>
         </section>
