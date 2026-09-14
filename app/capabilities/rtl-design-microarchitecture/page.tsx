@@ -1,6 +1,23 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, Cpu, Layers3, ShieldCheck } from 'lucide-react'
+import {
+  Activity,
+  ArrowRight,
+  BarChart3,
+  Blocks,
+  Braces,
+  CircuitBoard,
+  Clock3,
+  Cpu,
+  Database,
+  GitBranch,
+  Layers3,
+  Network,
+  Puzzle,
+  Search,
+  ShieldCheck,
+  Workflow,
+} from 'lucide-react'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
 
@@ -24,6 +41,23 @@ const capabilities = [
   'Synthesis-ready RTL delivery',
   'Memory and cache subsystem integration',
   'Third-party IP integration and customization',
+]
+
+const capabilityIcons = [
+  Layers3,
+  Activity,
+  Cpu,
+  Clock3,
+  Braces,
+  BarChart3,
+  Blocks,
+  Search,
+  Network,
+  GitBranch,
+  Workflow,
+  CircuitBoard,
+  Database,
+  Puzzle,
 ]
 
 const deliverables = [
@@ -115,26 +149,6 @@ export default function RtlDesignPage() {
                       <circle className="animate-pulse-glow" cx="469" cy="263" r="3" />
                     </g>
                   </svg>
-
-                  <div className="absolute left-[4%] top-[5%] w-[43%] border-l-2 border-cyan-300/70 pl-3 text-left">
-                    <div className="text-[9px] font-semibold uppercase tracking-[0.22em] text-cyan-200">01 / System architecture</div>
-                    <div className="mt-2 text-[10px] leading-5 text-slate-400">CPU&nbsp;&nbsp; Memory&nbsp;&nbsp; I/O<br />Interconnect definition</div>
-                  </div>
-
-                  <div className="absolute right-[2%] top-[9%] w-[42%] border-r-2 border-blue-300/70 pr-3 text-right">
-                    <div className="text-[9px] font-semibold uppercase tracking-[0.22em] text-blue-200">02 / Microarchitecture</div>
-                    <div className="mt-2 text-[10px] leading-5 text-slate-400">Fetch · Decode · Execute<br />Memory · Writeback</div>
-                  </div>
-
-                  <div className="absolute left-[1%] top-[44%] w-[42%] border-l-2 border-sky-300/70 pl-3 text-left">
-                    <div className="text-[9px] font-semibold uppercase tracking-[0.22em] text-sky-200">03 / RTL design</div>
-                    <div className="mt-2 font-mono text-[9px] leading-5 text-slate-400">always_ff @(posedge clk)<br /><span className="text-cyan-300">ready</span> = valid &amp;&amp; !stall</div>
-                  </div>
-
-                  <div className="absolute right-[0%] top-[47%] w-[43%] border-r-2 border-emerald-300/70 pr-3 text-right">
-                    <div className="text-[9px] font-semibold uppercase tracking-[0.22em] text-emerald-200">04 / Verification</div>
-                    <div className="mt-2 text-[10px] leading-5 text-slate-400">Clock · Reset · CDC · DFT<br />Synthesis · Physical implementation</div>
-                  </div>
 
                   <div className="float-card absolute bottom-[17%] left-1/2 h-[148px] w-[260px] -translate-x-1/2 [transform:translateX(-50%)_rotateX(58deg)_rotateZ(-8deg)]">
                     <div className="absolute inset-0 translate-y-6 skew-x-[-8deg] rounded-[15px] border border-slate-600/60 bg-[#020817] shadow-[0_35px_50px_rgba(0,0,0,0.6)]" />
@@ -267,26 +281,30 @@ export default function RtlDesignPage() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#f7faff] py-16 sm:py-20 lg:py-24">
-          <div className="absolute right-[-8%] top-16 h-72 w-72 rounded-full bg-sky-200/30 blur-3xl" aria-hidden="true" />
+        <section className="bg-[#f7faff] py-14 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
-            <div className="relative mb-12 flex flex-col justify-between gap-5 border-b border-sky-200 pb-8 md:flex-row md:items-end">
-              <div>
-                <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-700">Core capabilities</div>
-                <h2 className="mt-4 max-w-[780px] text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl lg:text-[3rem]">
-                Precision engineering across architecture, RTL, and implementation readiness.
-                </h2>
-              </div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-sky-600">14 engineering disciplines</div>
+            <div className="mb-10 border-b border-sky-200 pb-8 sm:mb-12">
+              <h2 className="max-w-[820px] text-[3.2rem] font-semibold leading-[0.94] tracking-[-0.06em] text-slate-950 sm:text-[4rem] lg:text-[4.5rem]">
+                Core <span className="text-sky-600">Capabilities</span>
+              </h2>
+              <p className="mt-5 max-w-[760px] font-serif text-[1.35rem] font-semibold leading-tight text-slate-900 sm:text-[1.65rem]">
+                Architecture to RTL. Built for silicon.
+              </p>
             </div>
 
-            <div className="relative grid gap-x-10 md:grid-cols-2">
-              {capabilities.map((item, index) => (
-                <div key={item} className="group flex min-h-[76px] items-start gap-4 border-b border-sky-100 py-5 transition-colors hover:border-sky-400">
-                  <span className="font-mono text-[11px] font-semibold text-sky-500">{String(index + 1).padStart(2, '0')}</span>
-                  <p className="text-[15px] leading-7 text-slate-800 transition-colors group-hover:text-sky-800">{item}</p>
+            <div className="grid gap-2.5 md:grid-cols-2 md:gap-x-4 md:gap-y-3">
+              {capabilities.map((item, index) => {
+                const Icon = capabilityIcons[index]
+
+                return (
+                <div key={item} className="flex min-h-[58px] items-center gap-4 rounded-lg border border-sky-100 bg-white px-3 py-2.5 shadow-[0_10px_24px_-22px_rgba(15,43,93,0.55)] sm:min-h-[62px] sm:px-4">
+                  <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-[#edf4ff] text-sky-600" aria-hidden="true">
+                    <Icon className="h-[18px] w-[18px]" strokeWidth={1.6} />
+                  </span>
+                  <p className="text-[13px] leading-5 text-[#172d54] sm:text-sm">{item}</p>
                 </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </section>
@@ -296,7 +314,7 @@ export default function RtlDesignPage() {
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
             <div className="relative grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
               <div>
-                <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-300">Design principles</div>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-cyan-300">Design principles</div>
                 <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-white sm:text-4xl">
                   A disciplined path from concept to silicon execution.
                 </h2>
@@ -329,8 +347,8 @@ export default function RtlDesignPage() {
 
               <div className="lg:col-span-2 border-t border-sky-300/20 pt-8">
                 <div className="flex items-center justify-between">
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-300">Deliverables</div>
-                  <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-300">Ready to ship</div>
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-cyan-300">Deliverables</div>
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-sky-300">Ready to ship</div>
                 </div>
 
                 <div className="mt-6 grid gap-x-10 md:grid-cols-2">

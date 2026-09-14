@@ -48,14 +48,14 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full min-w-0 max-w-none overflow-visible lg:mx-0 lg:-ml-[6%] lg:w-[122%]">
+        <div className="relative mx-auto w-full min-w-0 max-w-none overflow-visible lg:mx-0">
           <div className="relative h-[320px] w-full sm:h-[400px] lg:h-[clamp(500px,58vh,560px)]">
             <Image
               src="/hero-chip.png"
               alt="Advanced semiconductor package over a circuit-board layout"
               fill
               sizes="(max-width: 1024px) 100vw, 60vw"
-              className="object-contain object-center lg:scale-[1.18]"
+              className="object-contain object-center"
               priority
             />
           </div>

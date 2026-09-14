@@ -18,7 +18,7 @@ export const navLinks = [
 
 export const serviceLinks = [
   { title: 'RTL Design & Microarchitecture', id: 'rtl-design-microarchitecture', href: '/capabilities/rtl-design-microarchitecture' },
-  { title: 'Design Verification', id: 'design-verification' },
+  { title: 'Design Verification', id: 'design-verification', href: '/capabilities/design-verification' },
   { title: 'Design for Test (DFT)', id: 'design-for-test' },
   { title: 'Physical Design', id: 'physical-design' },
   { title: 'Physical Verification', id: 'physical-verification' },
@@ -26,4 +26,6 @@ export const serviceLinks = [
   { title: 'Post-Silicon Validation', id: 'post-silicon-validation' },
   { title: 'Embedded Systems Engineering', id: 'embedded-systems-engineering' },
 ]
+
+export const featuredServiceLinks = serviceLinks.slice(0, 4)
 

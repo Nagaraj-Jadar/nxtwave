@@ -7,7 +7,7 @@ import { ChevronDown, ChevronRight, Menu, X, ArrowRight } from 'lucide-react'
 import { Logo } from '@/components/logo'
 import { navLinks } from '@/lib/site'
 import { cn } from '@/lib/utils'
-import { serviceLinks } from '@/lib/site'
+import { featuredServiceLinks } from '@/lib/site'
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
@@ -53,10 +53,10 @@ export function SiteHeader() {
                     <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" aria-hidden="true" />
                     <span className="absolute inset-x-0 bottom-[22px] h-0.5 origin-left scale-x-0 bg-brand-blue transition-transform group-hover:scale-x-100 group-focus-within:scale-x-100" />
                   </Link>
-                  <div className="pointer-events-none absolute left-1/2 top-full z-50 w-[min(46rem,calc(100vw-2rem))] -translate-x-1/2 -translate-y-2 border border-border bg-background p-5 opacity-0 shadow-xl transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                  <div className="pointer-events-none absolute left-1/2 top-full z-50 w-[min(40rem,calc(100vw-2rem))] -translate-x-1/2 -translate-y-2 border border-border bg-background p-5 opacity-0 shadow-xl transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
                     <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Services</p>
                     <div className="grid grid-cols-2 gap-x-3 gap-y-1">
-                      {serviceLinks.map((service) => (
+                      {featuredServiceLinks.map((service) => (
                         <Link
                           key={service.id}
                           href={service.href ?? `/capabilities#${service.id}`}
@@ -177,7 +177,7 @@ export function SiteHeader() {
                   <div id="mobile-capabilities" className={cn('grid transition-[grid-template-rows] duration-200', capabilitiesOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]')}>
                     <div className="min-h-0 overflow-hidden">
                       <div className="space-y-3 px-4 pb-3">
-                        {serviceLinks.map((service) => (
+                        {featuredServiceLinks.map((service) => (
                           <Link
                             key={service.id}
                             href={service.href ?? `/capabilities#${service.id}`}
