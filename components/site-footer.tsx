@@ -1,6 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Mail, MapPin } from 'lucide-react'
-import { Logo } from '@/components/logo'
 import { siteConfig, serviceLinks } from '@/lib/site'
 
 const companyLinks = [
@@ -27,9 +27,14 @@ export function SiteFooter() {
       <div className="relative mx-auto max-w-[1280px] px-4 pb-8 pt-10 sm:px-6 lg:px-8">
         <div className="grid gap-10 border-b border-white/10 pb-10 lg:grid-cols-[1.2fr_1fr_1fr_1.05fr]">
           <div className="pr-4">
-            <div className="w-max">
-              <Logo className="w-36 sm:w-40" />
-            </div>
+            <Image
+              src="/footer-logo.png"
+              alt="NXT Wave Semiconductor logo"
+              width={190}
+              height={72}
+              sizes="(max-width: 640px) 180px, 190px"
+              className="h-auto w-[180px] object-contain object-left sm:w-[190px]"
+            />
             <p className="mt-5 max-w-[280px] text-sm leading-relaxed text-white/70">
               Driving technological breakthroughs with premier chip design and
               expert semiconductor craftsmanship.
@@ -127,18 +132,18 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="grid gap-6 border-b border-white/10 py-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
+        <div className="grid gap-4 border-b border-white/10 py-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,460px)] lg:items-center lg:gap-7">
           <div>
             <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-white/80">
               Stay Connected
             </p>
-            <p className="mt-3 max-w-[420px] text-2xl font-medium leading-tight text-white">
+            <p className="mt-1.5 text-xl font-medium leading-snug text-white">
               Subscribe to receive technical insights and silicon innovation updates.
             </p>
           </div>
 
-          <div className="flex items-center gap-0 self-end justify-end">
-            <div className="flex w-full max-w-[480px] items-center rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white/50 backdrop-blur-sm">
+          <div className="flex w-full flex-col gap-3 lg:flex-row lg:items-center">
+            <div className="flex min-w-0 flex-1 items-center rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white/50 backdrop-blur-sm">
               <Mail className="mr-3 h-4 w-4 text-white/60" aria-hidden="true" />
               <input
                 type="email"
@@ -149,14 +154,14 @@ export function SiteFooter() {
             </div>
             <button
               type="button"
-              className="ml-3 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#4d9af7] to-[#7aaeff] px-5 py-3 text-sm font-semibold text-white shadow-[0_0_30px_rgba(93,170,255,0.35)] transition-opacity hover:opacity-95"
+              className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#4d9af7] to-[#7aaeff] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_30px_rgba(93,170,255,0.35)] transition-opacity hover:opacity-95"
             >
               Subscribe <span aria-hidden="true">→</span>
             </button>
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 pt-6 text-sm text-white/70 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-3 py-5 text-sm text-white/70 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} NXTwave Semiconductor. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/contact" className="transition-colors hover:text-white">
