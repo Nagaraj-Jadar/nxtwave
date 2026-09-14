@@ -9,9 +9,8 @@ import {
   Users,
 } from 'lucide-react'
 import { jobs } from '@/data/jobs'
-import { CareerRoleCard } from '@/components/career-role-card'
+import { CareerRoleFilters } from '@/components/career-role-filters'
 import { SectionLabel } from '@/components/section-label'
-import { Reveal } from '@/components/reveal'
 import { CircuitPattern } from '@/components/circuit-pattern'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
@@ -83,13 +82,7 @@ export default function CareersPage() {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-col gap-4">
-              {jobs.map((job, i) => (
-                <Reveal key={job.slug} delay={i * 60}>
-                  <CareerRoleCard job={job} />
-                </Reveal>
-              ))}
-            </div>
+            <CareerRoleFilters jobs={jobs} />
           </div>
         </section>
 

@@ -2,6 +2,9 @@ export type Job = {
   slug: string
   title: string
   department: string
+  domain: string
+  experience: string
+  experienceYears: string
   location: string
   workModel: string
   employmentType: string
@@ -18,6 +21,9 @@ export const jobs: Job[] = [
     slug: 'sr-rtl-design-engineer',
     title: 'Sr. RTL Design Engineer',
     department: 'VLSI / Logic Design',
+    domain: 'RTL Design',
+    experience: 'Senior',
+    experienceYears: '5+ years',
     location: 'Remote / Hybrid',
     workModel: 'Remote / Hybrid',
     employmentType: 'Full-time',
@@ -52,6 +58,9 @@ export const jobs: Job[] = [
     slug: 'physical-design-lead',
     title: 'Physical Design Lead',
     department: 'VLSI / Physical Design',
+    domain: 'Physical Design',
+    experience: 'Lead',
+    experienceYears: '8+ years',
     location: 'San Jose, CA',
     workModel: 'On-site',
     employmentType: 'Full-time',
@@ -86,6 +95,9 @@ export const jobs: Job[] = [
     slug: 'soc-architect',
     title: 'SoC Architect',
     department: 'SoC Architecture',
+    domain: 'SoC Architecture',
+    experience: 'Senior',
+    experienceYears: '10+ years',
     location: 'Austin, TX',
     workModel: 'Hybrid',
     employmentType: 'Full-time',
@@ -120,6 +132,9 @@ export const jobs: Job[] = [
     slug: 'dft-engineer',
     title: 'DFT Engineer',
     department: 'VLSI / DFT',
+    domain: 'DFT',
+    experience: 'Mid-level',
+    experienceYears: '3+ years',
     location: 'Bangalore, IN',
     workModel: 'Hybrid',
     employmentType: 'Full-time',
@@ -154,6 +169,9 @@ export const jobs: Job[] = [
     slug: 'analog-layout-designer',
     title: 'Analog Layout Designer',
     department: 'VLSI / Analog',
+    domain: 'Analog & Mixed-Signal',
+    experience: 'Mid-level',
+    experienceYears: '3+ years',
     location: 'Remote',
     workModel: 'Remote',
     employmentType: 'Full-time',

@@ -5,7 +5,7 @@ import { ArrowRight, X } from 'lucide-react'
 import { useRef } from 'react'
 import type { Job } from '@/data/jobs'
 
-export function CareerRoleCard({ job }: { job: Job }) {
+export function CareerRoleCard({ job, showMetadata = false }: { job: Job; showMetadata?: boolean }) {
   const dialogRef = useRef<HTMLDialogElement>(null)
 
   function openPreview() {
@@ -25,12 +25,14 @@ export function CareerRoleCard({ job }: { job: Job }) {
           className="min-w-0 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-4"
           aria-label={`Preview ${job.title}`}
         >
-          <span className="inline-flex rounded-full bg-secondary px-3 py-1 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-navy">
-            {job.department}
-          </span>
           <h2 className="mt-2 text-xl font-semibold tracking-tight text-navy transition-colors duration-300 group-hover:text-brand-blue sm:text-2xl">
             {job.title}
           </h2>
+          {showMetadata && (
+            <p className="mt-3 text-sm font-medium text-muted-foreground">
+              {job.experienceYears} <span aria-hidden="true">•</span> {job.location}
+            </p>
+          )}
         </button>
         <div className="flex-none border-t border-border pt-3 sm:min-w-28 sm:border-t-0 sm:pt-0 sm:text-right">
           <Link
