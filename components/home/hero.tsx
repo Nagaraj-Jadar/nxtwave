@@ -51,11 +51,11 @@ export function Hero() {
         <div className="relative mx-auto w-full min-w-0 max-w-none overflow-visible lg:mx-0">
           <div className="relative h-[320px] w-full sm:h-[400px] lg:h-[clamp(500px,58vh,560px)]">
             <Image
-              src="/hero-chip.png"
-              alt="Advanced semiconductor package over a circuit-board layout"
+              src="/main-logo.png"
+              alt="NXTwave Semiconductor logo"
               fill
               sizes="(max-width: 1024px) 100vw, 60vw"
-              className="object-contain object-center"
+              className="animate-team-scene scale-[0.9] object-contain object-center p-5 drop-shadow-[0_22px_28px_rgba(15,43,93,0.18)] transition-transform duration-700 hover:scale-[0.94] sm:p-8 lg:scale-[0.82] lg:p-10 lg:hover:scale-[0.86]"
               priority
             />
           </div>

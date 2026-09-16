@@ -29,7 +29,7 @@ export function MissionSection() {
 
         <div className="mt-10 grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <Reveal className="relative min-h-[300px] overflow-hidden rounded-[28px] shadow-[0_24px_60px_-36px_rgba(15,43,93,0.7)] sm:min-h-[390px]">
-            <Image src="/mission-engineers.png" alt="" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover transition-transform duration-700 hover:scale-105" />
+            <Image src="/about-image-left.png" alt="" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover transition-transform duration-700 hover:scale-105" />
           </Reveal>
 
           <div>

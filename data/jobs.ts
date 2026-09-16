@@ -3,6 +3,7 @@ export type Job = {
   title: string
   department: string
   domain: string
+  serviceId: string
   experience: string
   experienceYears: string
   location: string
@@ -22,6 +23,7 @@ export const jobs: Job[] = [
     title: 'Sr. RTL Design Engineer',
     department: 'VLSI / Logic Design',
     domain: 'RTL Design',
+    serviceId: 'rtl-design-microarchitecture',
     experience: 'Senior',
     experienceYears: '5+ years',
     location: 'Remote / Hybrid',
@@ -59,6 +61,7 @@ export const jobs: Job[] = [
     title: 'Physical Design Lead',
     department: 'VLSI / Physical Design',
     domain: 'Physical Design',
+    serviceId: 'physical-design',
     experience: 'Lead',
     experienceYears: '8+ years',
     location: 'San Jose, CA',
@@ -96,6 +99,7 @@ export const jobs: Job[] = [
     title: 'SoC Architect',
     department: 'SoC Architecture',
     domain: 'SoC Architecture',
+    serviceId: 'rtl-design-microarchitecture',
     experience: 'Senior',
     experienceYears: '10+ years',
     location: 'Austin, TX',
@@ -133,6 +137,7 @@ export const jobs: Job[] = [
     title: 'DFT Engineer',
     department: 'VLSI / DFT',
     domain: 'DFT',
+    serviceId: 'design-for-test',
     experience: 'Mid-level',
     experienceYears: '3+ years',
     location: 'Bangalore, IN',
@@ -170,6 +175,7 @@ export const jobs: Job[] = [
     title: 'Analog Layout Designer',
     department: 'VLSI / Analog',
     domain: 'Analog & Mixed-Signal',
+    serviceId: 'analog-mixed-signal',
     experience: 'Mid-level',
     experienceYears: '3+ years',
     location: 'Remote',

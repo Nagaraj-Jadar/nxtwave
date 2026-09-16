@@ -29,7 +29,10 @@ export default function AboutPage() {
           <div className="relative mx-auto grid h-full max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1fr] lg:gap-14 lg:px-8">
             <div>
               <Reveal>
-                <p className="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-brand-blue">WHO WE ARE</p>
+                <div className="flex items-center gap-3">
+                  <p className="text-[1.08rem] font-bold uppercase tracking-[0.34em] text-brand-blue">WHO WE ARE</p>
+                  <span aria-hidden="true" className="h-px w-16 bg-brand-blue/60" />
+                </div>
                 <h1 className="mt-4 max-w-2xl font-serif text-[2.55rem] font-semibold leading-[1.02] tracking-[-0.04em] text-navy sm:text-[3.45rem] lg:text-[3.7rem]">
                   <span className="block lg:whitespace-nowrap">Engineering Silicon.</span>
                   <span className="mt-1 block text-brand-blue lg:whitespace-nowrap">Enabling Innovation.</span>
@@ -54,72 +57,98 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-secondary/45 py-16 sm:py-20 lg:py-24">
+        <section className="relative overflow-hidden bg-[#f4f7fb] py-8 sm:py-10 lg:py-12">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.028]" style={{ backgroundImage: 'linear-gradient(#0f2b5d 1px, transparent 1px), linear-gradient(90deg, #0f2b5d 1px, transparent 1px)', backgroundSize: '52px 52px' }} />
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20">
+            <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
               <Reveal>
-                <p className="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-brand-blue">WHAT WE DO</p>
-                <h2 className="mt-5 max-w-xl text-balance font-serif text-[2.6rem] font-semibold leading-[1.04] tracking-[-0.04em] text-navy sm:text-[3.55rem]">From Architecture to Silicon <span className="text-brand-blue">—</span> We Engineer the Entire Journey.</h2>
+                <div className="flex items-center gap-3">
+                  <p className="text-[1.08rem] font-bold uppercase tracking-[0.34em] text-brand-blue">WHAT WE DO</p>
+                  <span aria-hidden="true" className="h-px w-16 bg-brand-blue/60" />
+                </div>
+                <h2 className="mt-3 max-w-[29rem] font-serif text-[2.1rem] font-semibold leading-[1.04] tracking-[-0.04em] text-navy sm:text-[2.85rem]">
+                  <span className="block">From Architecture</span>
+                  <span className="block">to Silicon <span className="text-brand-blue">—</span> We</span>
+                  <span className="block">Engineer the</span>
+                  <span className="block text-brand-blue">Entire Journey.</span>
+                </h2>
               </Reveal>
-              <Reveal delay={100} className="max-w-[38rem] space-y-5 text-[0.98rem] font-medium leading-7 text-[#243246] sm:text-base sm:leading-8">
-                <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>We deliver end-to-end semiconductor engineering solutions spanning design, verification, implementation, signoff, and silicon validation.</p>
-                <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>With expertise across the complete silicon lifecycle, we help semiconductor companies accelerate innovation, reduce engineering risk, and deliver production-ready silicon with confidence.</p>
-                <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>From individual IPs and subsystems to complex SoC programs, we provide the technical depth and execution capability to take projects from concept to silicon.</p>
+              <Reveal delay={100} className="max-w-[36rem] space-y-3 text-[0.9rem] font-medium leading-6 text-[#243246] sm:text-[0.94rem] sm:leading-7 lg:pt-1">
+                <p className="lg:text-justify" style={{ textJustify: 'inter-word' }}>We deliver end-to-end semiconductor engineering solutions spanning design, verification, implementation, signoff, and silicon validation.</p>
+                <p className="lg:text-justify" style={{ textJustify: 'inter-word' }}>With expertise across the complete silicon lifecycle, we help semiconductor companies accelerate innovation, reduce engineering risk, and deliver production-ready silicon with confidence.</p>
+                <p className="lg:text-justify" style={{ textJustify: 'inter-word' }}>From individual IPs and subsystems to complex SoC programs, we provide the technical depth and execution capability to take projects from concept to silicon.</p>
               </Reveal>
             </div>
 
-            <Reveal delay={160} className="relative mt-14 border-y border-border py-10 sm:py-14 lg:mt-16 lg:py-16">
-                <svg aria-hidden="true" className="pointer-events-none absolute left-[8%] right-[8%] top-[38%] h-12 w-[84%]" viewBox="0 0 1000 48" fill="none" preserveAspectRatio="none">
-                  <path d="M0 24H100L150 8H350L400 40H600L650 8H850L900 24H1000" stroke="#2f6fe0" strokeOpacity=".35" strokeWidth="2" strokeDasharray="7 12" className="animate-trace-flow" />
-                </svg>
-                <div className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-5">
-                  {[
-                    ['Design.', 'text-navy'],
-                    ['Verify.', 'text-brand-blue'],
-                    ['Implement.', 'text-navy'],
-                    ['Validate.', 'text-brand-blue'],
-                    ['Deliver.', 'text-navy'],
-                  ].map(([word, color], index) => (
-                    <div key={word} className="relative flex items-center gap-4 lg:block lg:text-center">
-                      <span className="flex h-3 w-3 flex-none rounded-full border-2 border-brand-blue bg-secondary lg:mx-auto" />
-                      <span className={`mt-4 block font-serif text-[1.8rem] font-semibold leading-none tracking-[-0.03em] sm:text-[2.2rem] ${color}`}>{word}</span>
-                      {index < 4 && <span aria-hidden="true" className="hidden lg:block absolute right-[-0.6rem] top-1.5 h-px w-5 bg-brand-blue/35" />}
-                    </div>
-                  ))}
-                </div>
+            <Reveal delay={180} className="relative mt-8 h-[135px] sm:mt-9 sm:h-[185px] lg:mt-8 lg:h-[205px]" aria-label="Semiconductor engineering visual">
+              <div aria-hidden="true" className="absolute bottom-0 left-0 top-0 w-[28%] rounded-[1.25rem] bg-[#e4ebff] opacity-75 [clip-path:polygon(0_13%,72%_13%,100%_100%,0_100%)] sm:w-[25%]" />
+              <div className="absolute bottom-0 left-[7%] z-10 flex h-[62%] w-[15%] items-center justify-center sm:left-[8%] sm:w-[13%]">
+                <span className="max-w-[7rem] text-center text-[0.48rem] font-semibold uppercase leading-[2.2] tracking-[0.32em] text-brand-blue sm:text-[0.58rem]">Ideas<br />Into<br />Silicon</span>
+              </div>
+              <div className="absolute inset-y-0 right-[3%] w-[80%] overflow-hidden rounded-[1.15rem] bg-white shadow-[0_18px_45px_-34px_rgba(15,43,93,0.55)] [clip-path:polygon(6%_0,94%_0,100%_100%,12%_100%)] sm:right-[4%] sm:w-[78%] sm:[clip-path:polygon(5%_0,94%_0,100%_100%,10%_100%)]">
+                <Image src="/aboutus.png" alt="" fill sizes="(max-width: 1024px) 100vw, 1200px" className="animate-team-scene object-cover object-center" />
+              </div>
+            </Reveal>
+
+            <Reveal delay={260} className="relative mt-8 border-t border-border pt-6 sm:mt-10 sm:pt-7 lg:mt-10">
+              <svg aria-hidden="true" className="pointer-events-none absolute left-[8%] right-[8%] top-[3.15rem] hidden h-10 w-[84%] overflow-visible lg:block" viewBox="0 0 1000 40" fill="none" preserveAspectRatio="none">
+                <path d="M0 20H125V8H250V32H375V8H500V32H625V8H750V32H875V20H1000" stroke="#2f6fe0" strokeOpacity=".28" strokeWidth="1.5" />
+                <path d="M0 20H125V8H250V32H375V8H500V32H625V8H750V32H875V20H1000" stroke="#2f6fe0" strokeOpacity=".8" strokeWidth="2" strokeDasharray="3 150" className="animate-trace-flow" />
+              </svg>
+              <div className="relative grid gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
+                {[
+                  ['Design.', 'text-navy'],
+                  ['Verify.', 'text-brand-blue'],
+                  ['Implement.', 'text-navy'],
+                  ['Validate.', 'text-brand-blue'],
+                  ['Deliver.', 'text-navy'],
+                ].map(([word, color], index) => (
+                  <Reveal key={word} delay={300 + index * 90} className="flex items-center gap-4 lg:block lg:text-center">
+                    <span className="relative z-10 flex h-9 w-9 flex-none items-center justify-center rounded-full border border-brand-blue/35 bg-[#f4f7fb] shadow-[0_5px_16px_-10px_rgba(15,43,93,0.7)] lg:mx-auto">
+                      <span className="h-2.5 w-2.5 rounded-full bg-brand-blue" />
+                    </span>
+                    <span className={`mt-3 block font-serif text-[1.65rem] font-semibold leading-none tracking-[-0.03em] sm:text-[2rem] ${color}`}>{word}</span>
+                  </Reveal>
+                ))}
+              </div>
             </Reveal>
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-background py-16 sm:py-20 lg:py-24">
+        <section className="relative overflow-hidden bg-background pb-14 pt-6 sm:pb-16 sm:pt-8 lg:pb-20 lg:pt-10">
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20">
               <Reveal>
-                <p className="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-brand-blue">WHY CHOOSE US</p>
-                <h2 className="mt-5 max-w-xl text-balance font-serif text-[2.7rem] font-semibold leading-[1.04] tracking-[-0.04em] text-navy sm:text-[3.8rem]">Engineering Expertise. <span className="text-brand-blue">Execution You Can Trust.</span></h2>
+                <div className="flex items-center gap-3">
+                  <p className="text-[1.08rem] font-bold uppercase tracking-[0.34em] text-brand-blue">WHY CHOOSE US</p>
+                  <span aria-hidden="true" className="h-px w-16 bg-brand-blue/60" />
+                </div>
+                <h2 className="mt-4 max-w-[27rem] text-balance font-serif text-[2.35rem] font-semibold leading-[1.02] tracking-[-0.04em] text-navy sm:text-[3.15rem]">Engineering <span className="block">Expertise.</span> <span className="block text-brand-blue">Execution You</span> <span className="block text-brand-blue">Can Trust.</span></h2>
               </Reveal>
-              <Reveal delay={100} className="max-w-2xl space-y-5 text-[0.98rem] font-medium leading-7 text-[#243246] sm:text-base sm:leading-8">
-                <p>In semiconductor engineering, the right partner can make the difference between a project that simply progresses and one that delivers with confidence.</p>
-                <p>We combine specialized engineering talent, disciplined execution, and flexible engagement models to become a reliable extension of our customers' engineering teams.</p>
+              <Reveal delay={100} className="max-w-[36rem] space-y-3 text-[0.86rem] font-medium leading-6 text-[#243246] sm:text-[0.92rem] sm:leading-7">
+                <p className="lg:text-justify" style={{ textJustify: 'inter-word' }}>In semiconductor engineering, the right partner can make the difference between a project that simply progresses and one that delivers with confidence.</p>
+                <p className="lg:text-justify" style={{ textJustify: 'inter-word' }}>We combine specialized engineering talent, disciplined execution, and flexible engagement models to become a reliable extension of our customers' engineering teams.</p>
               </Reveal>
             </div>
 
-            <div className="mt-14 grid border-t border-border md:grid-cols-2 md:gap-x-12">
-              {reasons.map(([number, title, description], index) => (
-                <Reveal key={number} delay={120 + (index % 2) * 70} className="group border-b border-border py-7 sm:py-8">
-                  <div className="grid gap-4 sm:grid-cols-[2.5rem_1fr] sm:gap-6">
-                    <span className="font-mono text-xs font-semibold tracking-[0.12em] text-brand-blue">{number}</span>
-                    <div>
-                      <h3 className="font-serif text-xl font-semibold leading-tight text-navy transition-colors duration-200 group-hover:text-brand-blue sm:text-2xl">{title}</h3>
-                      <p className="mt-3 max-w-xl text-[0.95rem] leading-7 text-[#243246]">{description}</p>
-                    </div>
+            <div className="mt-10 grid gap-3 border-t border-border pt-3 md:grid-cols-2 md:gap-x-8">
+              {reasons.map(([, title, description], index) => (
+                <Reveal key={title} delay={120 + (index % 2) * 70} className="group relative overflow-hidden border-b border-border bg-white/45 px-5 py-5 transition-colors duration-300 hover:bg-white/80 sm:px-6 sm:py-6">
+                  <span aria-hidden="true" className="absolute bottom-0 left-0 top-0 w-1 origin-bottom scale-y-[0.4] bg-brand-blue/30 transition-transform duration-300 group-hover:scale-y-100 group-hover:bg-brand-blue" />
+                  <div className="pl-1">
+                    <h3 className="font-serif text-xl font-semibold leading-tight text-navy transition-colors duration-200 group-hover:text-brand-blue sm:text-[1.35rem]">{title}</h3>
+                    <p className="mt-2 max-w-xl text-[0.9rem] leading-6 text-[#243246]">{description}</p>
                   </div>
                 </Reveal>
               ))}
             </div>
 
-            <Reveal delay={220} className="mt-14 border-t border-border pt-8 sm:mt-20 sm:pt-10">
-              <p className="max-w-4xl font-serif text-[2rem] font-semibold leading-[1.08] tracking-[-0.03em] text-navy sm:text-[2.8rem]">More Than an Engineering Service Provider <span className="text-brand-blue">—</span> A Partner in Your Silicon Journey.</p>
+            <Reveal delay={220} className="relative mt-10 overflow-hidden border-t border-border pt-7 sm:mt-12 sm:pt-9">
+              <div aria-hidden="true" className="absolute left-0 top-0 h-1 w-20 bg-brand-blue" />
+              <div className="relative max-w-5xl pl-6 sm:pl-8">
+                <div aria-hidden="true" className="absolute bottom-1 left-0 top-1 w-px bg-brand-blue/35" />
+                <p className="font-serif text-[1.85rem] font-semibold leading-[1.06] tracking-[-0.035em] text-navy sm:text-[2.45rem] lg:text-[2.8rem]">More Than an Engineering Service Provider <span className="text-brand-blue">—</span><br className="hidden sm:block" /> A Partner in Your Silicon Journey.</p>
+              </div>
             </Reveal>
           </div>
         </section>
