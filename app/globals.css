@@ -254,6 +254,20 @@
   animation: nxt-trace-flow 6s linear infinite;
 }
 
+@keyframes team-scene-drift {
+  0%,
+  100% {
+    transform: scale(1.03) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate3d(-1.5%, -1%, 0);
+  }
+}
+
+.animate-team-scene {
+  animation: team-scene-drift 12s ease-in-out infinite;
+}
+
 @media (min-width: 1024px) {
   section .lg\:grid-cols-3 {
     margin-top: 2rem;
@@ -274,7 +288,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .animate-pulse-glow,
-  .animate-trace-flow {
+  .animate-trace-flow,
+  .animate-team-scene {
     animation: none;
   }
 }

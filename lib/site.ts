@@ -24,7 +24,6 @@ export const serviceLinks = [
   { title: 'Physical Verification', id: 'physical-verification', href: '/capabilities/physical-verification' },
   { title: 'Analog & Mixed-Signal', id: 'analog-mixed-signal', href: '/capabilities/analog-mixed-signal' },
   { title: 'Silicon Validation', id: 'silicon-validation', href: '/capabilities/silicon-validation' },
-  { title: 'Embedded Systems Engineering', id: 'embedded-systems-engineering', href: '/capabilities/embedded-systems-engineering' },
 ]
 
 export const featuredServiceLinks = serviceLinks.slice(0, 4)

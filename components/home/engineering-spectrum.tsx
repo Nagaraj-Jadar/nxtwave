@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { ArrowRight, CircuitBoard, Cpu, Gauge, Microscope, Radio, ShieldCheck, SquareStack, Waves, type LucideIcon } from 'lucide-react'
+import { ArrowRight, CircuitBoard, Cpu, Gauge, Microscope, ShieldCheck, SquareStack, Waves, type LucideIcon } from 'lucide-react'
 import Link from 'next/link'
 import { Reveal } from '@/components/reveal'
 import { serviceLinks } from '@/lib/site'
@@ -24,7 +24,6 @@ const services: Service[] = [
   { id: serviceLinks[4].id, href: serviceLinks[4].href!, title: 'Physical Verification', tagline: 'Ensuring Layout Accuracy and Foundry Compliance Before Tape-Out', description: 'Our Physical Verification services validate the final layout against stringent manufacturing and foundry requirements, identifying geometric, connectivity, reliability, and manufacturability issues before tape-out.', icon: Microscope },
   { id: serviceLinks[5].id, href: serviceLinks[5].href!, title: 'Analog & Mixed-Signal', tagline: 'Advanced Analog and Mixed-Signal Engineering for Complex Semiconductor Systems', description: 'Our Analog and Mixed-Signal services support high-performance analog, mixed-signal, and analog-digital integrated circuits through circuit development, integration, behavioral modeling, simulation, verification, and characterization.', icon: Waves },
   { id: serviceLinks[6].id, href: serviceLinks[6].href!, title: 'Silicon Validation', tagline: 'Ensuring Silicon Performs with Confidence', description: 'We validate functionality, interfaces, performance, power, and reliability to ensure silicon meets its intended requirements through systematic testing, characterization, and analysis.', icon: Gauge },
-  { id: serviceLinks[7].id, href: serviceLinks[7].href!, title: 'Embedded Systems Engineering', tagline: 'Intelligent, Reliable, and High-Performance Embedded Engineering', description: 'Our Embedded Systems Engineering services bridge semiconductor hardware with real-world applications through firmware, BSP, device drivers, operating systems, middleware, connectivity, and hardware-software integration.', icon: Radio },
 ]
 
 export function EngineeringSpectrum() {

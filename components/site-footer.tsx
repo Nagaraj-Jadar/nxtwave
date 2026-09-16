@@ -27,14 +27,16 @@ export function SiteFooter() {
       <div className="relative mx-auto max-w-[1280px] px-4 pb-8 pt-10 sm:px-6 lg:px-8">
         <div className="grid gap-10 border-b border-white/10 pb-10 lg:grid-cols-[1.2fr_1fr_1fr_1.05fr]">
           <div className="pr-4">
-            <Image
-              src="/footer-logo.png"
-              alt="NXT Wave Semiconductor logo"
-              width={190}
-              height={72}
-              sizes="(max-width: 640px) 180px, 190px"
-              className="h-auto w-[180px] object-contain object-left sm:w-[190px]"
-            />
+            <div className="w-fit rounded-md bg-white p-2 shadow-[0_10px_28px_rgba(0,0,0,0.18)]">
+              <Image
+                src="/footer-logos.png"
+                alt="NXTwave Semiconductor logo"
+                width={240}
+                height={120}
+                sizes="(max-width: 640px) 210px, 240px"
+                className="h-auto w-[210px] object-contain sm:w-[240px]"
+              />
+            </div>
             <p className="mt-5 max-w-[280px] text-sm leading-relaxed text-white/70">
               Driving technological breakthroughs with premier chip design and
               expert semiconductor craftsmanship.
