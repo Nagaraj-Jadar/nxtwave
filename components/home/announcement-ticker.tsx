@@ -15,6 +15,11 @@ export function AnnouncementTicker() {
       <div className="flex w-max items-center justify-center whitespace-nowrap will-change-transform animate-marquee">
         {loop.map((item, i) => (
           <span key={`${item}-${i}`} className="flex items-center justify-center">
+            {i === items.length && (
+              <span aria-hidden="true" className="px-1 text-sm font-medium text-white/50">
+                |
+              </span>
+            )}
             <span className="px-3 py-2 text-center text-[10px] font-medium uppercase tracking-[0.18em] text-white/90 sm:text-[11px] lg:text-[12px]">
               {item}
             </span>

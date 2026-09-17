@@ -28,7 +28,7 @@ export function Hero() {
           </h1>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
             End-to-end semiconductor design expertise from architecture to GDSII
-            and post-silicon validation. Engineered for first-pass success.
+            and silicon validation. Engineered for first-pass success.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link

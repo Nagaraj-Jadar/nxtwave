@@ -15,7 +15,7 @@ export function SectionLabel({
     <p
       className={cn(
         'font-sans text-xs font-semibold uppercase tracking-[0.2em]',
-        tone === 'light' ? 'text-brand-blue/90' : 'text-brand-blue',
+        tone === 'light' ? 'text-white' : 'text-brand-blue',
         align === 'center' && 'text-center',
         className,
       )}

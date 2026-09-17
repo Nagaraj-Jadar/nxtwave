@@ -84,8 +84,8 @@ export function ProcessSection() {
             <Image src="/about-image.png" alt="" fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-cover opacity-30 mix-blend-screen" />
             <div aria-hidden="true" className="absolute inset-0 bg-navy/70" />
             <div className="relative flex h-full flex-col justify-center">
-              <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-blue">
-                <BriefcaseBusiness className="h-4 w-4" aria-hidden="true" /> People. Ideas. Impact.
+              <div className="flex w-fit items-center gap-2 rounded-sm border border-white/20 bg-navy/75 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
+                <BriefcaseBusiness className="h-4 w-4 text-cyan-300" aria-hidden="true" /> People. Ideas. Impact.
               </div>
               <h3 className="text-balance font-serif text-2xl font-semibold leading-tight text-white sm:text-3xl">
                 Let&apos;s Build What&apos;s Next.
@@ -101,7 +101,7 @@ export function ProcessSection() {
                 Get in Touch
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <div className="mt-8 border-t border-white/20 pt-4 text-[9px] font-semibold uppercase tracking-[0.2em] text-brand-blue/90">
+              <div className="mt-8 w-fit rounded-sm border border-white/20 bg-navy/75 px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/95">
                 Innovation | Collaboration | Opportunity
               </div>
             </div>

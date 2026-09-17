@@ -127,7 +127,7 @@ export default function AboutPage() {
               </Reveal>
               <Reveal delay={100} className="max-w-[36rem] space-y-3 text-[0.86rem] font-medium leading-6 text-[#243246] sm:text-[0.92rem] sm:leading-7">
                 <p className="lg:text-justify" style={{ textJustify: 'inter-word' }}>In semiconductor engineering, the right partner can make the difference between a project that simply progresses and one that delivers with confidence.</p>
-                <p className="lg:text-justify" style={{ textJustify: 'inter-word' }}>We combine specialized engineering talent, disciplined execution, and flexible engagement models to become a reliable extension of our customers' engineering teams.</p>
+                <p className="lg:text-justify" style={{ textJustify: 'inter-word' }}>We combine specialized engineering talent, disciplined execution, and flexible engagement models to become a reliable extension of our customer's engineering teams.</p>
               </Reveal>
             </div>
 

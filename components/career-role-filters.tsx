@@ -42,7 +42,7 @@ export function CareerRoleFilters({ jobs }: CareerRoleFiltersProps) {
               aria-label="Service"
               className="h-10 w-full appearance-none rounded-md border border-white/20 bg-white/10 pl-9 pr-8 text-sm font-medium text-white outline-none transition-all duration-200 hover:border-sky-300/70 hover:bg-white/15 focus:border-sky-300 focus:ring-2 focus:ring-sky-300/30"
             >
-              <option value="all" className="text-navy">All services</option>
+              <option value="all" className="text-navy">All Domains</option>
               {serviceLinks.map((option) => <option key={option.id} value={option.id} className="text-navy">{option.title}</option>)}
             </select>
           </label>
