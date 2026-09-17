@@ -45,7 +45,7 @@ export function PageHero({
           </nav>
         )}
         <div className="inline-flex rounded-sm border border-white/20 bg-navy/60 px-3 py-2">
-          <SectionLabel tone="light" className={eyebrowClassName}>{eyebrow}</SectionLabel>
+          <SectionLabel tone="light" className={eyebrowClassName ?? 'text-sm'}>{eyebrow}</SectionLabel>
         </div>
         <h1 className="mt-4 max-w-3xl text-balance text-4xl leading-tight tracking-tight md:text-5xl">
           {title}
