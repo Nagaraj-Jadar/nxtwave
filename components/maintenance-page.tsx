@@ -19,13 +19,13 @@ export function MaintenancePage() {
         <div className="flex flex-1 items-center py-20 sm:py-28">
           <section className="max-w-3xl">
             <p className="mb-5 text-sm font-semibold uppercase tracking-[0.24em] text-brand-blue">
-              Website under maintenance
+              Coming soon
             </p>
             <h1 className="max-w-2xl font-serif text-5xl font-semibold leading-[0.95] tracking-[-0.05em] text-navy sm:text-7xl lg:text-8xl">
-              Building what comes next.
+              Something new is taking shape.
             </h1>
             <p className="mt-7 max-w-xl text-base leading-7 text-[#33496b] sm:text-lg">
-              We are making a few improvements to the NXTwave Semiconductor website. Our engineering team will be back online shortly.
+              NXTwave Semiconductor is preparing a new digital experience. Our engineering team will be online shortly.
             </p>
             <div className="mt-10 flex flex-col gap-3 text-sm text-[#33496b] sm:flex-row sm:items-center sm:gap-6">
               <span>{siteConfig.tagline}</span>
