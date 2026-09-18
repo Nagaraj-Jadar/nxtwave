@@ -8,7 +8,7 @@ const cardThemes = ['dark', 'light', 'light', 'dark'] as const
 
 export function CoreStrengths() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#edf3f8] py-3 sm:py-5 lg:h-[calc(100vh-110px)] lg:min-h-[620px] lg:py-3">
+    <section className="relative isolate overflow-hidden bg-[#edf3f8] py-3 sm:py-5 lg:min-h-[704px] lg:py-3">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-70"
@@ -20,7 +20,7 @@ export function CoreStrengths() {
       />
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-20 mx-auto h-px w-[18rem] bg-brand-blue/30" />
 
-      <div className="relative mx-auto flex h-full max-w-[1280px] flex-col px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex min-h-full max-w-[1280px] flex-col px-4 sm:px-6 lg:px-8">
         <Reveal className="max-w-[56rem]">
           <h2 className="max-w-[780px] font-serif text-[2.5rem] font-semibold leading-[0.92] tracking-[-0.06em] text-navy sm:text-[3.2rem] lg:text-[4.1rem] lg:leading-[0.88]">
             Our Core <span className="text-brand-blue">Strengths</span>
@@ -31,7 +31,7 @@ export function CoreStrengths() {
           </p>
         </Reveal>
 
-        <div className="mt-4 grid flex-1 gap-4 lg:grid-cols-2 lg:grid-rows-2 lg:items-stretch">
+        <div className="mt-4 grid min-h-0 flex-1 gap-4 lg:grid-cols-2 lg:grid-rows-2 lg:items-stretch">
           {strengths.map((strength, index) => {
             const theme = cardThemes[index]
             const isDark = theme === 'dark'
@@ -40,7 +40,7 @@ export function CoreStrengths() {
               <Reveal
                 key={strength.title}
                 delay={120 + index * 80}
-                className="group relative h-full overflow-hidden rounded-[28px]"
+                className="group relative h-full min-h-0 overflow-hidden rounded-[28px]"
               >
                 <div
                   className={[
