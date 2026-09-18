@@ -6,6 +6,7 @@ import {
   Cpu,
   FileSearch,
   MoveUpRight,
+  type LucideIcon,
   Users,
 } from 'lucide-react'
 import { jobs } from '@/data/jobs'
@@ -20,6 +21,12 @@ export const metadata: Metadata = {
   description:
     'Join NXTwave Semiconductor and build high-impact silicon. Explore open roles across RTL design, verification, physical design, DFT, and analog/mixed-signal.',
 }
+
+const hiringSteps: [string, string, string, LucideIcon][] = [
+  ['01', 'REVIEW', 'Technical assessment by our lead architects.', FileSearch],
+  ['02', 'DEEP-DIVE', 'Architecture and verification discussions.', Users],
+  ['03', 'DELIVER', 'Fast-track integration into our engineering teams.', Cpu],
+]
 
 export default function CareersPage() {
   return (
@@ -113,11 +120,7 @@ export default function CareersPage() {
                 </p>
               </div>
               <ol className="grid gap-8 sm:grid-cols-3">
-                {[
-                  ['01', 'REVIEW', 'Technical assessment by our lead architects.', FileSearch],
-                  ['02', 'DEEP-DIVE', 'Architecture and verification discussions.', Users],
-                  ['03', 'DELIVER', 'Fast-track integration into our engineering teams.', Cpu],
-                ].map(([number, title, description, Icon], i) => (
+                {hiringSteps.map(([number, title, description, Icon], i) => (
                   <li key={number} className="relative">
                     <div className="flex items-center gap-3" aria-hidden="true">
                       <span className="inline-flex h-12 w-12 flex-none items-center justify-center rounded-full border border-brand-blue/45 bg-secondary text-brand-blue shadow-[0_8px_22px_-14px_rgba(47,111,224,0.8)]">

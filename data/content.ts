@@ -45,11 +45,18 @@ export const strengths: Strength[] = [
 ]
 
 export type Capability = {
+  number?: string
   title: string
   id: string
   description: string
   points: string[]
   icon: LucideIcon
+}
+
+export type ProcessStep = {
+  number: string
+  title: string
+  description: string
 }
 
 export const capabilities: Capability[] = [

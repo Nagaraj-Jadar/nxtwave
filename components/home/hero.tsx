@@ -55,7 +55,6 @@ export function Hero() {
               alt="NXTwave Semiconductor logo"
               fill
               sizes="(max-width: 1024px) 92vw, 55vw"
-              quality={100}
               className="animate-team-scene object-contain object-center p-2 drop-shadow-[0_24px_30px_rgba(15,43,93,0.2)] transition-transform duration-700 hover:scale-[1.015] sm:p-4 lg:p-6"
               priority
             />

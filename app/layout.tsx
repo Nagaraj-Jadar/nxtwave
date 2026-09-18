@@ -71,6 +71,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`light ${inter.variable} ${sourceSerif.variable}`}
     >
       <body className="antialiased bg-background text-foreground">

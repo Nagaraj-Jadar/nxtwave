@@ -58,11 +58,20 @@ export function ApplicationForm({ jobTitle, jobSlug }: { jobTitle: string; jobSl
 
     setStatus('submitting')
     try {
-      // Keep submissions local until a form service or backend is connected.
-      await new Promise((resolve) => window.setTimeout(resolve, 400))
+      const response = await fetch('/api/careers', {
+        method: 'POST',
+        body: formData,
+      })
+      const result = (await response.json()) as { message?: string }
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Submission failed. Please try again.')
+      }
+
       setStatus('success')
       form.reset()
       setResume(null)
+      setErrors({})
     } catch (err) {
       setStatus('error')
       setServerError(err instanceof Error ? err.message : 'Submission failed.')
