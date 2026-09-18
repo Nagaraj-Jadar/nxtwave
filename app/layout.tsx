@@ -1,6 +1,8 @@
 import { Analytics } from '@vercel/analytics/next'
+import { headers } from 'next/headers'
 import type { Metadata, Viewport } from 'next'
 import { Inter, Source_Serif_4 } from 'next/font/google'
+import { MaintenancePage } from '@/components/maintenance-page'
 import './globals.css'
 
 const inter = Inter({
@@ -63,11 +65,22 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-export default function RootLayout({
+const maintenanceHosts = new Set(['nxtwavesemi.com', 'www.nxtwavesemi.com'])
+
+function isMaintenanceHost(host: string | null) {
+  const normalizedHost = host?.split(',')[0].trim().split(':')[0].toLowerCase()
+  return normalizedHost ? maintenanceHosts.has(normalizedHost) : false
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const requestHeaders = await headers()
+  const host = requestHeaders.get('x-forwarded-host') ?? requestHeaders.get('host')
+  const isMaintenanceMode = isMaintenanceHost(host)
+
   return (
     <html
       lang="en"
@@ -75,7 +88,7 @@ export default function RootLayout({
       className={`light ${inter.variable} ${sourceSerif.variable}`}
     >
       <body className="antialiased bg-background text-foreground">
-        {children}
+        {isMaintenanceMode ? <MaintenancePage /> : children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
