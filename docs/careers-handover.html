@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NXTwave Semiconductor - Careers Handover Guide</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm; }
+  :root { color: #102b57; font-family: Arial, Helvetica, sans-serif; }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: #263852; font-size: 10.5pt; line-height: 1.55; }
+  header { border-bottom: 4px solid #2f6fe0; padding-bottom: 18px; margin-bottom: 24px; }
+  .eyebrow { color: #2f6fe0; font-size: 9pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+  h1 { color: #0f2b5d; font-family: Georgia, serif; font-size: 30pt; line-height: 1.05; margin: 10px 0 8px; }
+  h2 { color: #0f2b5d; font-family: Georgia, serif; font-size: 18pt; margin: 26px 0 9px; border-bottom: 1px solid #d9e3f1; padding-bottom: 5px; }
+  h3 { color: #0f2b5d; font-size: 12pt; margin: 18px 0 5px; }
+  p { margin: 7px 0; }
+  ul, ol { margin-top: 7px; padding-left: 22px; }
+  li { margin: 4px 0; }
+  code, pre { font-family: Consolas, monospace; }
+  code { background: #eef4fc; color: #0f2b5d; padding: 1px 4px; border-radius: 3px; }
+  pre { background: #f4f7fb; border-left: 3px solid #2f6fe0; padding: 10px 12px; white-space: pre-wrap; font-size: 9pt; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 15px; }
+  th { background: #0f2b5d; color: white; text-align: left; }
+  th, td { border: 1px solid #d8e1ed; padding: 7px 8px; vertical-align: top; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+  .notice { background: #eef5ff; border: 1px solid #b8d2f5; border-left: 4px solid #2f6fe0; padding: 11px 13px; margin: 12px 0; }
+  .warning { background: #fff8e8; border: 1px solid #ead39a; border-left: 4px solid #c99014; padding: 11px 13px; margin: 12px 0; }
+  .footer { border-top: 1px solid #d9e3f1; margin-top: 28px; padding-top: 10px; color: #68788e; font-size: 8.5pt; }
+  .page-break { page-break-before: always; }
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">NXTwave Semiconductor</div>
+  <h1>Careers Handover Guide</h1>
+  <p>Managing open roles, applications, Resend email delivery, and Vercel deployment.</p>
+</header>
+
+<div class="notice"><strong>Current setup:</strong> Career roles are managed in code through <code>data/jobs.ts</code>. Applications are submitted through the existing form and sent by the Next.js API route at <code>/api/careers</code>.</div>
+
+<h2>1. Managing Career Roles</h2>
+<p>All open roles are stored in <code>data/jobs.ts</code>. There is currently no CMS or admin dashboard. Role updates require editing the file and deploying the project.</p>
+
+<h3>Add a role</h3>
+<p>Add a new object inside the <code>jobs</code> array:</p>
+<pre><code>{
+  slug: 'verification-engineer',
+  title: 'Verification Engineer',
+  department: 'VLSI / Verification',
+  domain: 'Design Verification',
+  serviceId: 'design-verification',
+  experience: 'Mid-level',
+  experienceYears: '3+ years',
+  location: 'Bangalore, IN',
+  workModel: 'Hybrid',
+  employmentType: 'Full-time',
+  overview: 'Role introduction goes here.',
+  responsibilities: ['Responsibility one.', 'Responsibility two.'],
+  requiredQualifications: ['Required qualification.'],
+  preferredQualifications: ['Preferred qualification.'],
+  skills: ['SystemVerilog', 'UVM'],
+  benefits: ['Benefit or working condition.']
+}</code></pre>
+
+<h3>Required role fields</h3>
+<table>
+<tr><th>Field</th><th>Purpose</th></tr>
+<tr><td><code>slug</code></td><td>Unique lowercase URL identifier, for example <code>verification-engineer</code>.</td></tr>
+<tr><td><code>title</code></td><td>Role title shown to candidates.</td></tr>
+<tr><td><code>department</code>, <code>domain</code></td><td>Role classification and display information.</td></tr>
+<tr><td><code>serviceId</code></td><td>Connects the role to the Services filter. Use an existing ID from <code>lib/site.ts</code>.</td></tr>
+<tr><td><code>experience</code></td><td>Used by the experience filter. Keep values consistent, such as Senior, Lead, or Mid-level.</td></tr>
+<tr><td><code>experienceYears</code>, <code>location</code>, <code>workModel</code>, <code>employmentType</code></td><td>Candidate-facing role metadata.</td></tr>
+<tr><td><code>overview</code></td><td>Main role introduction.</td></tr>
+<tr><td>Responsibilities, qualifications, skills, benefits</td><td>Arrays of candidate-facing content.</td></tr>
+</table>
+
+<h3>Edit a role</h3>
+<p>Find the role in <code>data/jobs.ts</code> and update the required fields. Avoid changing the <code>slug</code> unless the URL should change. A changed slug creates a new URL and invalidates the old one.</p>
+
+<h3>Delete a role</h3>
+<p>Remove the complete role object from the <code>jobs</code> array. The role will disappear from the listing and its old URL will return a 404 after deployment. Check whether the old URL is externally shared or indexed before deleting it.</p>
+
+<h2>2. Role URLs and Filters</h2>
+<p>Role pages are generated automatically by <code>app/careers/[slug]/page.tsx</code>:</p>
+<pre><code>/careers/&lt;slug&gt;</code></pre>
+<p>The Careers listing filters by:</p>
+<ul>
+  <li><strong>Service:</strong> based on <code>serviceId</code>.</li>
+  <li><strong>Experience:</strong> based on <code>experience</code>.</li>
+</ul>
+<p>Use only service IDs already defined in <code>lib/site.ts</code>, such as <code>design-verification</code>, <code>physical-design</code>, or <code>analog-mixed-signal</code>.</p>
+
+<h2>3. Application and Email Flow</h2>
+<p>The application form is included automatically on each role page. It submits multipart form data to:</p>
+<pre><code>/api/careers</code></pre>
+<p>The API reads the server-only environment variables below and sends the application through Resend.</p>
+
+<table>
+<tr><th>Environment variable</th><th>Purpose</th></tr>
+<tr><td><code>RESEND_API_KEY</code></td><td>Private Resend API key. Never expose or commit it.</td></tr>
+<tr><td><code>RESEND_FROM_EMAIL</code></td><td>Verified sender, currently <code>careers@nxtwavesemi.com</code>.</td></tr>
+<tr><td><code>CAREERS_RECIPIENT_EMAIL</code></td><td>Application recipient, currently <code>info@nxtwavesemiconductor.com</code>.</td></tr>
+</table>
+
+<div class="warning"><strong>Security:</strong> Never put the real API key in <code>.env.example</code>, frontend code, Git, screenshots, or chat. Use local <code>.env.local</code> or Vercel Environment Variables only.</div>
+
+<h2>4. Local Development</h2>
+<p>Create a local <code>.env.local</code> file with private values, then restart the development server:</p>
+<pre><code>RESEND_API_KEY=your_private_resend_api_key
+RESEND_FROM_EMAIL=careers@nxtwavesemi.com
+CAREERS_RECIPIENT_EMAIL=info@nxtwavesemiconductor.com</code></pre>
+<pre><code>pnpm dev</code></pre>
+<p>Test a role page, complete the form, and upload a real PDF, DOC, or DOCX resume under 10 MB. The local API returns an error when required environment variables are missing.</p>
+
+<h2>5. Vercel Deployment</h2>
+<ol>
+  <li>Open the correct Vercel project.</li>
+  <li>Open <strong>Settings → Environment Variables</strong>.</li>
+  <li>Add <code>RESEND_API_KEY</code>, <code>RESEND_FROM_EMAIL</code>, and <code>CAREERS_RECIPIENT_EMAIL</code>.</li>
+  <li>Configure Production variables for the live site.</li>
+  <li>Configure Preview variables separately if preview testing is required.</li>
+  <li>Redeploy after adding or changing environment variables.</li>
+</ol>
+<p>Environment changes do not automatically update an already deployed build.</p>
+
+<h2>6. Resend Delivery Verification</h2>
+<p>The API reports success only when Resend returns a valid email ID. The server logs:</p>
+<ul>
+  <li>Whether each required environment variable is present.</li>
+  <li>Safe request context such as role and resume size.</li>
+  <li>Resend error name, message, and status code when sending fails.</li>
+  <li>The Resend email ID when accepted.</li>
+</ul>
+<p>After a real submission, copy the email ID from Vercel logs and check it in Resend. Confirm whether the status is queued, sent, delivered, bounced, failed, or suppressed.</p>
+<p>If Resend reports delivered but the recipient cannot find the message, check spam, quarantine, mailbox rules, and recipient mail-server filtering.</p>
+
+<h2>7. Safe Update Procedure</h2>
+<ol>
+  <li>Create a branch for the role update.</li>
+  <li>Edit only <code>data/jobs.ts</code>.</li>
+  <li>Check the slug is unique.</li>
+  <li>Check the service ID exists in <code>lib/site.ts</code>.</li>
+  <li>Run <code>pnpm exec tsc --noEmit</code>.</li>
+  <li>Run <code>pnpm build</code>.</li>
+  <li>Run <code>pnpm dev</code> and test the Careers listing, filters, role URL, and application form.</li>
+  <li>Commit, push, review, and deploy.</li>
+</ol>
+
+<h2>8. Files to Know</h2>
+<table>
+<tr><th>File</th><th>Purpose</th></tr>
+<tr><td><code>data/jobs.ts</code></td><td>Career role data.</td></tr>
+<tr><td><code>app/careers/page.tsx</code></td><td>Careers listing page.</td></tr>
+<tr><td><code>app/careers/[slug]/page.tsx</code></td><td>Individual role page and application form placement.</td></tr>
+<tr><td><code>components/application-form.tsx</code></td><td>Candidate application form and submission behavior.</td></tr>
+<tr><td><code>app/api/careers/route.ts</code></td><td>Multipart validation and Resend email delivery.</td></tr>
+<tr><td><code>.env.example</code></td><td>Safe configuration template with placeholders only.</td></tr>
+</table>
+
+<div class="footer">NXTwave Semiconductor | Careers Handover Guide | Keep private environment values out of source control.</div>
+</body>
+</html>

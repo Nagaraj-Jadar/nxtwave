@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NXTwave Semiconductor - Project Technical Handover</title>
+<style>
+  @page { size: A4; margin: 17mm 16mm; }
+  :root { color: #102b57; font-family: Arial, Helvetica, sans-serif; }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: #263852; font-size: 10pt; line-height: 1.5; }
+  header { border-bottom: 4px solid #2f6fe0; padding-bottom: 16px; margin-bottom: 22px; }
+  .eyebrow { color: #2f6fe0; font-size: 8.5pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+  h1 { color: #0f2b5d; font-family: Georgia, serif; font-size: 28pt; line-height: 1.05; margin: 8px 0; }
+  h2 { color: #0f2b5d; font-family: Georgia, serif; font-size: 17pt; margin: 24px 0 8px; border-bottom: 1px solid #d9e3f1; padding-bottom: 4px; }
+  h3 { color: #0f2b5d; font-size: 11.5pt; margin: 16px 0 5px; }
+  p { margin: 6px 0; }
+  ul, ol { margin-top: 6px; padding-left: 21px; }
+  li { margin: 3px 0; }
+  code, pre { font-family: Consolas, monospace; }
+  code { background: #eef4fc; color: #0f2b5d; padding: 1px 3px; border-radius: 3px; }
+  pre { background: #f4f7fb; border-left: 3px solid #2f6fe0; padding: 9px 11px; white-space: pre-wrap; font-size: 8.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 9px 0 13px; }
+  th { background: #0f2b5d; color: white; text-align: left; }
+  th, td { border: 1px solid #d8e1ed; padding: 6px 7px; vertical-align: top; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+  .notice { background: #eef5ff; border: 1px solid #b8d2f5; border-left: 4px solid #2f6fe0; padding: 10px 12px; margin: 10px 0; }
+  .warning { background: #fff8e8; border: 1px solid #ead39a; border-left: 4px solid #c99014; padding: 10px 12px; margin: 10px 0; }
+  .tree { background: #f4f7fb; padding: 11px 13px; font: 8.5pt/1.5 Consolas, monospace; white-space: pre-wrap; }
+  .footer { border-top: 1px solid #d9e3f1; margin-top: 24px; padding-top: 9px; color: #68788e; font-size: 8pt; }
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">NXTwave Semiconductor</div>
+  <h1>Project Technical Handover</h1>
+  <p>Complete overview of the website architecture, technology, features, configuration, deployment, and maintenance workflow.</p>
+</header>
+
+<div class="notice"><strong>Project type:</strong> A responsive corporate semiconductor engineering website with informational pages, capabilities pages, Careers role listings, job application email delivery, contact forms, and Vercel deployment support.</div>
+
+<h2>1. Technology Stack</h2>
+<table>
+<tr><th>Technology</th><th>Use in this project</th></tr>
+<tr><td>Next.js 16.3.3</td><td>Application framework, App Router, static pages, dynamic role pages, and API route handlers.</td></tr>
+<tr><td>React 19</td><td>UI components, interactive filters, forms, animation/reveal behavior, and client-side state.</td></tr>
+<tr><td>TypeScript 5.7</td><td>Type safety across pages, components, data models, and API code.</td></tr>
+<tr><td>Tailwind CSS 4</td><td>Responsive layout, colors, typography, spacing, borders, shadows, and state styling.</td></tr>
+<tr><td>PostCSS</td><td>CSS processing through the Tailwind PostCSS integration.</td></tr>
+<tr><td>Lucide React</td><td>Interface icons used across navigation, buttons, forms, Careers, and capability sections.</td></tr>
+<tr><td>Resend SDK</td><td>Server-side career application email delivery with resume attachments.</td></tr>
+<tr><td>Vercel Analytics</td><td>Analytics loaded in production from the root layout.</td></tr>
+<tr><td>Vercel</td><td>Recommended hosting and deployment platform for the Next.js application.</td></tr>
+</table>
+
+<h2>2. Project Structure</h2>
+<div class="tree">app/
+  page.tsx                         Homepage
+  layout.tsx                       Root metadata, fonts, viewport, analytics
+  globals.css                      Global Tailwind/CSS and animations
+  about/page.tsx                   About page
+  capabilities/page.tsx            Capabilities overview
+  capabilities/&lt;service&gt;/page.tsx  Individual capability pages
+  careers/page.tsx                 Careers listing and filters
+  careers/[slug]/page.tsx          Dynamic job detail and application page
+  contact/page.tsx                 Contact page
+  api/careers/route.ts             Resend career application API
+
+components/
+  site-header.tsx                  Main navigation and mobile navigation
+  site-footer.tsx                  Footer, contact details, newsletter area
+  page-hero.tsx                    Shared inner-page hero
+  section-label.tsx                Shared section eyebrow label
+  reveal.tsx                       Scroll/reveal animation wrapper
+  circuit-pattern.tsx              Decorative circuit SVG background
+  application-form.tsx             Career application form
+  career-role-card.tsx             Career listing card
+  career-role-filters.tsx          Careers service and experience filters
+  contact-form.tsx                 Contact form UI
+  home/                            Homepage sections
+  ui/                              Shared button and form field primitives
+
+data/
+  content.ts                       Homepage strengths, capabilities, process data
+  jobs.ts                          Career role data
+
+lib/
+  site.ts                          Navigation and service link configuration
+  utils.ts                         Shared utility functions
+
+public/                            Static logos, photos, technical images, and icons
+docs/                              Handover documentation</div>
+
+<h2>3. Website Routes</h2>
+<table>
+<tr><th>Route</th><th>Purpose</th><th>Rendering</th></tr>
+<tr><td><code>/</code></td><td>Homepage with hero, mission, strengths, services, and process sections.</td><td>Static</td></tr>
+<tr><td><code>/about</code></td><td>Company overview and semiconductor expertise.</td><td>Static</td></tr>
+<tr><td><code>/capabilities</code></td><td>Complete services/capabilities overview.</td><td>Static</td></tr>
+<tr><td><code>/capabilities/&lt;service&gt;</code></td><td>Individual service detail pages such as RTL, DFT, physical design, and validation.</td><td>Static</td></tr>
+<tr><td><code>/careers</code></td><td>Open role listing with service and experience filters.</td><td>Static</td></tr>
+<tr><td><code>/careers/&lt;slug&gt;</code></td><td>Individual role detail page with application form.</td><td>Static generated paths</td></tr>
+<tr><td><code>/contact</code></td><td>Contact information and contact form.</td><td>Static</td></tr>
+<tr><td><code>/api/careers</code></td><td>Multipart career application endpoint that sends email through Resend.</td><td>Dynamic server route</td></tr>
+</table>
+
+<h2>4. Visual System and Frontend Design</h2>
+<ul>
+  <li>Primary visual palette uses navy, brand blue, white, pale blue, and cyan accents.</li>
+  <li>Typography uses Next Font with Inter for sans-serif interface text and Source Serif 4 for editorial headings.</li>
+  <li>Layouts are responsive using Tailwind breakpoints and grid/flex composition.</li>
+  <li>Decorative engineering visuals include circuit grids, circuit traces, pulsing nodes, animated marquee content, and reveal transitions.</li>
+  <li>Reduced-motion support is included for the primary CSS animations.</li>
+  <li>Navigation includes desktop links, Services menu behavior, and a mobile menu.</li>
+  <li>Shared components keep visual behavior consistent across About, Capabilities, Careers, and Contact pages.</li>
+</ul>
+
+<h2>5. Homepage Composition</h2>
+<p>The homepage is assembled in <code>app/page.tsx</code> from these sections:</p>
+<ol>
+  <li><strong>Hero:</strong> Main positioning statement, service CTA, contact CTA, logo visual, and announcement ticker.</li>
+  <li><strong>Mission:</strong> Company purpose and engineering message.</li>
+  <li><strong>Core Strengths:</strong> Four strength panels supported by public image assets.</li>
+  <li><strong>Engineering Spectrum:</strong> Service cards and expandable service list.</li>
+  <li><strong>Process:</strong> Engineering process and Careers/contact CTA.</li>
+</ol>
+
+<h2>6. Capabilities System</h2>
+<p>Service navigation is centralized in <code>lib/site.ts</code>. Capability content is represented in both shared data and service-specific pages.</p>
+<p>When adding or renaming a service, update the related navigation and data references together. Existing service IDs are used by navigation, Careers filters, links, and anchors.</p>
+<p>Important service IDs include:</p>
+<pre><code>rtl-design-microarchitecture
+design-verification
+design-for-test
+physical-design
+physical-verification
+analog-mixed-signal
+silicon-validation</code></pre>
+
+<h2>7. Careers System</h2>
+<p>Career roles are managed in <code>data/jobs.ts</code>. The role type includes:</p>
+<ul>
+  <li>Unique <code>slug</code>.</li>
+  <li>Title, department, domain, location, work model, and employment type.</li>
+  <li>Experience level and years of experience.</li>
+  <li>Overview, responsibilities, required qualifications, preferred qualifications, skills, and benefits.</li>
+  <li><code>serviceId</code>, which connects the role to the service filter.</li>
+</ul>
+<p>The dynamic page <code>app/careers/[slug]/page.tsx</code> uses <code>generateStaticParams</code> and <code>getJob(slug)</code>. Adding a role requires a deployment for the new page to be generated.</p>
+
+<h2>8. Career Application and Resend Email</h2>
+<p>The client component <code>components/application-form.tsx</code> collects candidate information and submits a <code>FormData</code> request to <code>/api/careers</code>.</p>
+<p>The server route:</p>
+<ul>
+  <li>Reads multipart form data.</li>
+  <li>Validates required candidate fields and email format.</li>
+  <li>Validates PDF, DOC, and DOCX file signatures.</li>
+  <li>Rejects resumes larger than 10 MB.</li>
+  <li>Sanitizes the attachment filename and email HTML.</li>
+  <li>Encodes the resume as base64 for Resend.</li>
+  <li>Sends from the verified sender and replies to the candidate.</li>
+  <li>Returns success only after Resend returns a valid email ID.</li>
+  <li>Logs only safe diagnostic information on the server.</li>
+</ul>
+
+<h3>Required environment variables</h3>
+<pre><code>RESEND_API_KEY=your_private_resend_api_key
+RESEND_FROM_EMAIL=careers@nxtwavesemi.com
+CAREERS_RECIPIENT_EMAIL=info@nxtwavesemiconductor.com</code></pre>
+<div class="warning"><strong>Never commit secrets.</strong> Use <code>.env.local</code> for local development and Vercel Environment Variables for Preview or Production. The committed <code>.env.example</code> contains placeholders only.</div>
+
+<h2>9. Contact and Newsletter Areas</h2>
+<p>The Contact page uses <code>components/contact-form.tsx</code> for the existing contact experience. The footer contains a newsletter interface and site contact details. Any external form provider or mailbox integration for the contact/newsletter areas should be configured separately from the Careers Resend route.</p>
+
+<h2>10. Configuration Files</h2>
+<table>
+<tr><th>File</th><th>Purpose</th></tr>
+<tr><td><code>package.json</code></td><td>Dependencies and scripts: <code>pnpm dev</code>, <code>pnpm build</code>, and <code>pnpm start</code>.</td></tr>
+<tr><td><code>pnpm-lock.yaml</code></td><td>Locked dependency versions for reproducible installs.</td></tr>
+<tr><td><code>next.config.mjs</code></td><td>Next configuration, image behavior, build settings, and dev indicators.</td></tr>
+<tr><td><code>tsconfig.json</code></td><td>Strict TypeScript, bundler module resolution, path alias, and Next plugin.</td></tr>
+<tr><td><code>postcss.config.mjs</code></td><td>Tailwind/PostCSS processing configuration.</td></tr>
+<tr><td><code>components.json</code></td><td>UI component tooling configuration.</td></tr>
+<tr><td><code>.gitignore</code></td><td>Ignores <code>.env*.local</code>, dependencies, build output, and local tooling files.</td></tr>
+</table>
+
+<h2>11. Local Development</h2>
+<pre><code>pnpm install
+pnpm dev</code></pre>
+<p>Open <code>http://localhost:3000</code>. For career email testing, create the private <code>.env.local</code> file before starting the server.</p>
+<p>Useful checks:</p>
+<pre><code>pnpm exec tsc --noEmit
+pnpm build
+pnpm start</code></pre>
+
+<h2>12. Vercel Deployment</h2>
+<ol>
+  <li>Connect the repository to the correct Vercel project.</li>
+  <li>Use the project root as the deployment root.</li>
+  <li>Configure the three server environment variables in Vercel.</li>
+  <li>Configure Production and Preview separately when required.</li>
+  <li>Deploy through the approved branch or pull request workflow.</li>
+  <li>Redeploy after changing any environment variable.</li>
+  <li>Check the deployment logs and test the live routes.</li>
+</ol>
+<p>Vercel automatically runs the Next.js build using the project scripts. The production output includes the dynamic <code>/api/careers</code> route.</p>
+
+<h2>13. Maintenance Workflow</h2>
+<ol>
+  <li>Create a feature branch for each change.</li>
+  <li>Keep content changes separate from code or design changes.</li>
+  <li>Run TypeScript validation and production build locally.</li>
+  <li>Test desktop and mobile layouts.</li>
+  <li>Test Careers role links, filters, and application behavior after role updates.</li>
+  <li>Review environment changes carefully and never commit secret files.</li>
+  <li>Open a pull request, review the Vercel Preview, then deploy to Production.</li>
+</ol>
+
+<h2>14. Important Technical Notes</h2>
+<ul>
+  <li>Do not edit generated folders such as <code>.next</code> or generated TypeScript metadata.</li>
+  <li>Do not rename environment variables without updating the API route and deployment configuration.</li>
+  <li>Do not change a job slug casually because it changes the public URL.</li>
+  <li>Resend acceptance means the provider accepted the email request; it does not guarantee inbox delivery.</li>
+  <li>Use Resend logs to investigate queued, sent, delivered, bounced, failed, or suppressed messages.</li>
+  <li>Check spam, quarantine, mailbox rules, and recipient mail filtering when Resend reports delivery but the recipient cannot find the message.</li>
+</ul>
+
+<div class="footer">NXTwave Semiconductor | Project Technical Handover | Keep private environment values out of source control.</div>
+</body>
+</html>

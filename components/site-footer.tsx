@@ -25,7 +25,7 @@ export function SiteFooter() {
       <div className="pointer-events-none absolute -bottom-14 right-0 h-52 w-52 rounded-full border border-brand-blue/20 opacity-40" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-[1280px] px-4 pb-8 pt-10 sm:px-6 lg:px-8">
-        <div className="grid gap-10 border-b border-white/10 pb-10 lg:grid-cols-[1.2fr_1fr_1fr_1.05fr]">
+        <div className="grid gap-10 border-b border-white/10 pb-10 lg:grid-cols-2 xl:grid-cols-[1.2fr_1fr_1fr_1.05fr]">
           <div className="pr-4">
             <div className="w-fit rounded-md bg-white p-2 shadow-[0_10px_28px_rgba(0,0,0,0.18)]">
               <Image

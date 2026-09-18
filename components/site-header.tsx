@@ -32,15 +32,15 @@ export function SiteHeader() {
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b border-border bg-white">
-        <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-[88px] lg:px-8">
+        <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 xl:h-[88px] xl:px-8">
           <Link href="/" aria-label="NXTwave Semiconductor home" className="flex-none">
-            <Logo className="h-12 w-auto sm:h-14 lg:h-[68px]" />
+            <Logo className="h-12 w-auto sm:h-14 xl:h-[68px]" />
           </Link>
 
           {/* Desktop navigation */}
           <nav
             aria-label="Primary"
-            className="hidden items-center gap-8 lg:flex"
+            className="hidden items-center gap-8 xl:flex"
           >
             {navLinks.map((link) =>
               link.label === 'Services' ? (
@@ -53,7 +53,7 @@ export function SiteHeader() {
                     <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" aria-hidden="true" />
                     <span className="absolute inset-x-0 bottom-[22px] h-0.5 origin-left scale-x-0 bg-brand-blue transition-transform group-hover:scale-x-100 group-focus-within:scale-x-100" />
                   </Link>
-                  <div className="pointer-events-none absolute left-1/2 top-full z-50 w-[min(40rem,calc(100vw-2rem))] -translate-x-1/2 -translate-y-2 border border-border bg-background p-5 opacity-0 shadow-xl transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                  <div className="pointer-events-none absolute right-0 top-full z-50 w-[min(40rem,calc(100vw-2rem))] -translate-y-2 border border-border bg-background p-5 opacity-0 shadow-xl transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
                     <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Services</p>
                     <div className="grid grid-cols-2 gap-x-3 gap-y-1">
                       {featuredServiceLinks.map((service) => (
@@ -100,7 +100,7 @@ export function SiteHeader() {
             aria-label="Open menu"
             aria-expanded={open}
             aria-controls="mobile-menu"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border text-navy transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border text-navy transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring xl:hidden"
           >
             <Menu className="h-5 w-5" aria-hidden="true" />
           </button>
