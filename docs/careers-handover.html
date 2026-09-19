@@ -44,22 +44,19 @@
 <h3>Add a role</h3>
 <p>Add a new object inside the <code>jobs</code> array:</p>
 <pre><code>{
-  slug: 'verification-engineer',
-  title: 'Verification Engineer',
-  department: 'VLSI / Verification',
+  slug: 'design-verification-engineer',
   domain: 'Design Verification',
+  title: 'Design Verification (DV) Engineer',
+  jobType: 'Full-time',
   serviceId: 'design-verification',
-  experience: 'Mid-level',
-  experienceYears: '3+ years',
-  location: 'Bangalore, IN',
-  workModel: 'Hybrid',
-  employmentType: 'Full-time',
-  overview: 'Role introduction goes here.',
-  responsibilities: ['Responsibility one.', 'Responsibility two.'],
-  requiredQualifications: ['Required qualification.'],
-  preferredQualifications: ['Preferred qualification.'],
-  skills: ['SystemVerilog', 'UVM'],
-  benefits: ['Benefit or working condition.']
+  aboutRole: 'Role introduction goes here.',
+  whatYoullDo: ['Responsibility one.', 'Responsibility two.'],
+  requiredSkills: ['Required skill.'],
+  goodToHave: ['Preferred skill.'],
+  educationalQualification: 'Educational qualification.',
+  whatWeLookFor: ['What we look for.'],
+  whatYouWillWorkOn: ['SystemVerilog', 'UVM'],
+  closingStatement: 'Closing statement.'
 }</code></pre>
 
 <h3>Required role fields</h3>
@@ -67,12 +64,11 @@
 <tr><th>Field</th><th>Purpose</th></tr>
 <tr><td><code>slug</code></td><td>Unique lowercase URL identifier, for example <code>verification-engineer</code>.</td></tr>
 <tr><td><code>title</code></td><td>Role title shown to candidates.</td></tr>
-<tr><td><code>department</code>, <code>domain</code></td><td>Role classification and display information.</td></tr>
+<tr><td><code>domain</code></td><td>Official domain classification and display information.</td></tr>
 <tr><td><code>serviceId</code></td><td>Connects the role to the Services filter. Use an existing ID from <code>lib/site.ts</code>.</td></tr>
-<tr><td><code>experience</code></td><td>Used by the experience filter. Keep values consistent, such as Senior, Lead, or Mid-level.</td></tr>
-<tr><td><code>experienceYears</code>, <code>location</code>, <code>workModel</code>, <code>employmentType</code></td><td>Candidate-facing role metadata.</td></tr>
-<tr><td><code>overview</code></td><td>Main role introduction.</td></tr>
-<tr><td>Responsibilities, qualifications, skills, benefits</td><td>Arrays of candidate-facing content.</td></tr>
+<tr><td><code>jobType</code></td><td>Employment type supplied by the job description.</td></tr>
+<tr><td><code>aboutRole</code>, <code>educationalQualification</code>, <code>closingStatement</code></td><td>Candidate-facing role content.</td></tr>
+<tr><td><code>whatYoullDo</code>, <code>requiredSkills</code>, <code>goodToHave</code>, <code>whatWeLookFor</code>, <code>whatYouWillWorkOn</code></td><td>Arrays of candidate-facing content.</td></tr>
 </table>
 
 <h3>Edit a role</h3>
@@ -86,8 +82,7 @@
 <pre><code>/careers/&lt;slug&gt;</code></pre>
 <p>The Careers listing filters by:</p>
 <ul>
-  <li><strong>Service:</strong> based on <code>serviceId</code>.</li>
-  <li><strong>Experience:</strong> based on <code>experience</code>.</li>
+  <li><strong>Domain:</strong> based on <code>serviceId</code>, with labels from <code>lib/site.ts</code>.</li>
 </ul>
 <p>Use only service IDs already defined in <code>lib/site.ts</code>, such as <code>design-verification</code>, <code>physical-design</code>, or <code>analog-mixed-signal</code>.</p>
 

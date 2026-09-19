@@ -36,7 +36,7 @@ export default async function RolePage({ params }: RolePageProps) {
           <Link href="/careers" className="inline-flex items-center gap-2 text-sm text-navy-foreground/65 transition-colors hover:text-white"><ArrowLeft className="h-4 w-4" aria-hidden="true" /> Back to careers</Link>
           <SectionLabel className="mt-10" tone="light">Open position</SectionLabel>
           <h1 className="mt-4 max-w-4xl text-4xl leading-tight tracking-tight md:text-6xl">{job.title}</h1>
-          <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm text-navy-foreground/70"><span className="inline-flex items-center gap-2"><Briefcase className="h-4 w-4 text-brand-blue" aria-hidden="true" />{job.department}</span></div>
+          <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm text-navy-foreground/70"><span className="inline-flex items-center gap-2"><Briefcase className="h-4 w-4 text-brand-blue" aria-hidden="true" />{job.domain}</span><span>{job.jobType}</span></div>
         </div>
       </section>
       <main className="bg-[#F4F7FC]">
@@ -57,10 +57,20 @@ export default async function RolePage({ params }: RolePageProps) {
                 <span className="h-px w-8 bg-brand-blue/40" />
               </div>
             </div>
-            <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">{job.overview}</p>
-            <RoleSection title="What you&apos;ll do" items={job.responsibilities} />
-            <RoleSection title="What you bring" items={job.requiredQualifications} />
-            <RoleSection title="Nice to have" items={job.preferredQualifications} />
+            <p className="mt-5 max-w-3xl whitespace-pre-line text-lg leading-relaxed text-muted-foreground">{job.aboutRole}</p>
+            <RoleSection title="What You&apos;ll Do" items={job.whatYoullDo} />
+            <RoleSection title="Required Skills" items={job.requiredSkills} />
+            <RoleSection title="Good to Have" items={job.goodToHave} />
+            <section className="mt-14 border-t border-border pt-8">
+              <h2 className="text-2xl text-navy">Educational Qualification</h2>
+              <p className="mt-5 leading-relaxed text-muted-foreground">{job.educationalQualification}</p>
+            </section>
+            <RoleSection title="What We Look For" items={job.whatWeLookFor} />
+            <RoleSection title="What You Will Work On" items={job.whatYouWillWorkOn} />
+            <section className="mt-14 border-t border-border pt-8">
+              <h2 className="text-2xl text-navy">Closing Statement</h2>
+              <p className="mt-5 leading-relaxed text-muted-foreground">{job.closingStatement}</p>
+            </section>
           </article>
           <aside id="application" className="min-w-0 self-start overflow-hidden rounded-2xl border border-border bg-white shadow-[0_20px_45px_-24px_rgba(15,43,93,0.25)] lg:sticky lg:top-28">
             <div className="relative overflow-hidden bg-navy px-5 py-6 text-navy-foreground sm:px-8">

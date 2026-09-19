@@ -30,7 +30,7 @@ export function CareerRoleCard({ job, showMetadata = false }: { job: Job; showMe
           </h2>
           {showMetadata && (
             <p className="mt-3 text-sm font-medium text-muted-foreground">
-              {job.experienceYears} <span aria-hidden="true">•</span> {job.location}
+              {job.domain} <span aria-hidden="true">•</span> {job.jobType}
             </p>
           )}
         </button>
@@ -54,7 +54,7 @@ export function CareerRoleCard({ job, showMetadata = false }: { job: Job; showMe
           <div className="flex items-start justify-between gap-5">
             <div>
               <span className="inline-flex rounded-full bg-white px-3 py-1 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-navy shadow-sm">
-                {job.department}
+                {job.domain}
               </span>
               <h2 id={`${job.slug}-preview-title`} className="mt-3 text-2xl leading-tight tracking-tight text-navy sm:text-3xl">
                 {job.title}
@@ -72,10 +72,10 @@ export function CareerRoleCard({ job, showMetadata = false }: { job: Job; showMe
           </div>
         </div>
         <div className="p-5 sm:p-7">
-          <p className="text-base leading-relaxed text-muted-foreground">{job.overview}</p>
+          <p className="whitespace-pre-line text-base leading-relaxed text-muted-foreground">{job.aboutRole}</p>
           <h3 className="mt-7 text-lg text-navy">What you&apos;ll do</h3>
           <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
-            {job.responsibilities.slice(0, 3).map((responsibility) => (
+            {job.whatYoullDo.slice(0, 3).map((responsibility) => (
               <li key={responsibility} className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brand-blue" />{responsibility}</li>
             ))}
           </ul>

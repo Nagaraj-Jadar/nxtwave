@@ -140,9 +140,9 @@ silicon-validation</code></pre>
 <p>Career roles are managed in <code>data/jobs.ts</code>. The role type includes:</p>
 <ul>
   <li>Unique <code>slug</code>.</li>
-  <li>Title, department, domain, location, work model, and employment type.</li>
-  <li>Experience level and years of experience.</li>
-  <li>Overview, responsibilities, required qualifications, preferred qualifications, skills, and benefits.</li>
+  <li>Official domain, title, job type, and service ID.</li>
+  <li>About the role, responsibilities, required skills, good-to-have skills, and educational qualification.</li>
+  <li>What we look for, what the engineer will work on, and a closing statement.</li>
   <li><code>serviceId</code>, which connects the role to the service filter.</li>
 </ul>
 <p>The dynamic page <code>app/careers/[slug]/page.tsx</code> uses <code>generateStaticParams</code> and <code>getJob(slug)</code>. Adding a role requires a deployment for the new page to be generated.</p>
