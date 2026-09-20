@@ -44,18 +44,33 @@ export function SiteFooter() {
 
             <div className="mt-6 flex items-center gap-3">
               {[
-                { icon: <LinkedInIcon />, label: 'LinkedIn' },
-                { icon: <XIcon />, label: 'X / Twitter' },
-                { icon: <Mail className="h-4 w-4" aria-hidden="true" />, label: 'Email' },
-              ].map(({ icon, label }) => (
-                <span
+                {
+                  icon: <LinkedInIcon />,
+                  label: 'LinkedIn',
+                  href: 'https://www.linkedin.com/company/nxtwave-semiconductor',
+                },
+                {
+                  icon: <XIcon />,
+                  label: 'X / Twitter',
+                  href: 'https://x.com/NXTwaveSemi',
+                },
+                {
+                  icon: <Mail className="h-4 w-4" aria-hidden="true" />,
+                  label: 'Email',
+                  href: `mailto:${siteConfig.contact.email}`,
+                },
+              ].map(({ icon, label, href }) => (
+                <a
                   key={label}
+                  href={href}
                   aria-label={label}
-                  title={`${label} (link coming soon)`}
+                  target={href.startsWith('http') ? '_blank' : undefined}
+                  rel={href.startsWith('http') ? 'noreferrer noopener' : undefined}
+                  title={label}
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:border-brand-blue/60 hover:bg-brand-blue/10"
                 >
                   {icon}
-                </span>
+                </a>
               ))}
             </div>
 
@@ -165,10 +180,10 @@ export function SiteFooter() {
         <div className="flex flex-col gap-3 py-5 text-sm text-white/70 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} NXTwave Semiconductor. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link href="/contact" className="transition-colors hover:text-white">
+            <Link href="/privacy-policy" className="transition-colors hover:text-white">
               Privacy Policy
             </Link>
-            <Link href="/contact" className="transition-colors hover:text-white">
+            <Link href="/terms-of-use" className="transition-colors hover:text-white">
               Terms of Use
             </Link>
           </div>
