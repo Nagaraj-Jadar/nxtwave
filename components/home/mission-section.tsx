@@ -40,7 +40,7 @@ export function MissionSection() {
               </h2>
             </Reveal>
             <Reveal delay={180}>
-              <p className="mt-7 max-w-[38rem] text-base font-medium leading-8 text-[#1f2937] sm:text-lg lg:text-justify" style={{ textJustify: 'inter-word' }}>
+              <p className="mt-7 max-w-[38rem] text-base font-medium leading-8 text-[#1f2937] sm:text-lg">
                 We are a next-generation semiconductor engineering company delivering high-end engineering expertise across the complete silicon development lifecycle.
               </p>
             </Reveal>

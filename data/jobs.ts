@@ -119,7 +119,7 @@ export const jobs: Job[] = [
     whatWeLookFor: ['Strong technical fundamentals and a practical engineering mindset.', 'Ability to understand specifications and solve complex technical problems.', 'Effective debugging, analysis, and communication skills.', 'Ability to work independently and collaboratively across engineering teams.', 'Curiosity and willingness to learn new semiconductor technologies and methodologies.'],
     whatYouWillWorkOn: ['Chip Bring-Up', 'Subsystem/System Validation', 'PCIe', 'DDR', 'HBM', 'Ethernet', 'CXL', 'USB', 'MIPI', 'SerDes', 'Firmware-Assisted Validation', 'Power & Performance Characterization', 'Silicon Debug'],
     closingStatement: 'Validate real silicon and turn measured device behavior into reliable, production-ready semiconductor products.',
-  },
+  }
 ]
 
 export function getJob(slug: string) {

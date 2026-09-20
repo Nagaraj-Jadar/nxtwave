@@ -39,9 +39,9 @@ export default function AboutPage() {
                 </h1>
               </Reveal>
               <Reveal delay={100} className="mt-6 max-w-[36rem] space-y-3 text-[0.9rem] font-medium leading-6 text-[#243246] sm:text-[0.95rem] sm:leading-7 lg:mt-5 lg:space-y-2.5 lg:text-[0.88rem] lg:leading-6">
-                <p className="border-l-2 border-brand-blue pl-4 text-base font-semibold leading-6 text-navy sm:text-lg sm:leading-7" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>We are a next-generation semiconductor engineering company delivering high-end engineering expertise across the complete silicon development lifecycle.</p>
-                <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>From architecture and RTL design to advanced verification, DFT, physical implementation, analog and mixed-signal engineering, and post-silicon validation, we help semiconductor companies turn ambitious ideas into reliable, production-ready silicon.</p>
-                <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>Our teams combine deep semiconductor expertise, engineering precision, intelligent automation, and execution discipline to solve complex challenges across IP, subsystem, and SoC development.</p>
+                <p className="border-l-2 border-brand-blue pl-4 text-base font-semibold leading-6 text-navy sm:text-lg sm:leading-7">We are a next-generation semiconductor engineering company delivering high-end engineering expertise across the complete silicon development lifecycle.</p>
+                <p>From architecture and RTL design to advanced verification, DFT, physical implementation, analog and mixed-signal engineering, and post-silicon validation, we help semiconductor companies turn ambitious ideas into reliable, production-ready silicon.</p>
+                <p>Our teams combine deep semiconductor expertise, engineering precision, intelligent automation, and execution discipline to solve complex challenges across IP, subsystem, and SoC development.</p>
               </Reveal>
               <Reveal delay={220} className="mt-7 border-t border-border pt-5 sm:mt-9 sm:pt-6">
                 <p className="max-w-2xl font-serif text-[1.65rem] font-semibold leading-[1.08] tracking-[-0.03em] text-navy sm:text-[2.2rem]">We don't just engineer designs. We engineer confidence into silicon.</p>
