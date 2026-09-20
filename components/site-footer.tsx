@@ -57,7 +57,7 @@ export function SiteFooter() {
                 {
                   icon: <Mail className="h-4 w-4" aria-hidden="true" />,
                   label: 'Email',
-                  href: `mailto:${siteConfig.contact.email}`,
+                  href: 'mailto:info@nxtwavesemi.com',
                 },
               ].map(({ icon, label, href }) => (
                 <a
